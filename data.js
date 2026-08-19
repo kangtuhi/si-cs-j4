@@ -10,7 +10,7 @@ const webContent = {
   // TAMBAHKAN DATA KONTAK DI SINI
   kontak: {
     admin: {
-      nama: "Mang Tuhi (Operational Admin)",
+      nama: "Mang Tuhi (System Admin)",
       whatsapp: "6289620055191", // Awali dengan 62 (kode negara) tanpa spasi/tanda +
       pesan: "Halo Admin, saya ingin menanyakan terkait pembaruan dokumen IKA.",
     },
