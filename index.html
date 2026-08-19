@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="id" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SI CS - Sistem Informasi Cleaning Services</title>
+
+    <!-- Link CSS Bootstrap 5.3.8 Terbaru via CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Tambahan CSS custom sedikit agar tampilan makin manis */
+      body {
+        scroll-behavior: smooth;
+      }
+      .hero-section {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. NAVBAR RESPONSIF -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top border-bottom border-secondary"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold text-info" href="#">✨ SI - CS J4</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#ika-info">Info IKA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#video-tutorial">Video Edukasi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#kontak-layanan">Kontak</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 2. HERO SECTION / BANNER UTAMA -->
+    <header
+      id="home"
+      class="hero-section text-white text-center py-5 shadow-sm"
+    >
+      <div class="container py-4">
+        <h1 class="display-4 fw-bold mb-3">
+          Sistem Informasi Cleaning Services
+        </h1>
+        <p class="lead text-light-50 max-w-md mx-auto">
+          Pusat informasi panduan kerja, SOP, dan Instruksi Kerja Amalan (IKA)
+          digital untuk seluruh tim operasional kebersihan.
+        </p>
+        <a href="#ika-info" class="btn btn-info btn-lg fw-bold mt-3 shadow"
+          >Lihat Panduan Kerja</a
+        >
+      </div>
+    </header>
+
+    <!-- 3. BAGIAN INFORMASI / DATA SEPUTAR CS -->
+    <main class="container my-5">
+      <!-- Bagian Informasi IKA yang diubah jadi ID kosong -->
+      <section id="ika-info" class="mb-5">
+        <div
+          class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary shadow-sm"
+        >
+          <div class="col-lg-8 px-0">
+            <span id="ika-badge" class="badge bg-warning text-dark mb-2 fw-bold"
+              ><!-- Diisi lewat JS --></span
+            >
+            <h2 id="ika-title" class="display-6 fw-bold">
+              <!-- Diisi lewat JS -->
+            </h2>
+            <p id="ika-desc" class="lead my-3"><!-- Diisi lewat JS --></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bagian Video Grid yang diubah jadi ID kosong -->
+      <section id="video-tutorial">
+        <div class="text-center mb-4">
+          <h2>📺 Video Edukasi & Praktik Lapangan</h2>
+          <p class="text-muted">
+            Simak video demonstrasi berikut untuk memastikan standar kebersihan
+            kerja terjaga dengan baik.
+          </p>
+        </div>
+
+        <!-- Tempat JavaScript merakit kartu video secara otomatis -->
+        <div id="video-list" class="row g-4"></div>
+      </section>
+
+      <!-- TATA LETAK KONTAK ADMIN & DEVELOPER -->
+      <section
+        id="kontak-layanan"
+        class="mt-5 pt-4 border-top border-secondary"
+      >
+        <div class="text-center mb-4">
+          <h3 class="fw-bold">📞 Pusat Bantuan & Kontak Internal</h3>
+          <p class="text-muted">
+            Hubungi kontak di bawah jika ada kendala sistem atau kebutuhan
+            revisi dokumen IKA.
+          </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <!-- Kontak Admin Operasional -->
+          <div class="col-md-5">
+            <div
+              class="card h-100 bg-body-tertiary border-secondary shadow-sm text-center p-3"
+            >
+              <div class="card-body">
+                <div class="fs-1 mb-2">📋</div>
+                <h5 class="card-title fw-bold text-warning">
+                  Admin Operasional (IKA)
+                </h5>
+                <p id="admin-name" class="card-text text-light-50 small">
+                  <!-- Diisi lewat JS -->
+                </p>
+                <a
+                  id="admin-wa-btn"
+                  href="#"
+                  target="_blank"
+                  class="btn btn-success w-100 fw-bold mt-2"
+                >
+                  Hubungi via WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kontak Developer -->
+          <div class="col-md-5">
+            <div
+              class="card h-100 bg-body-tertiary border-secondary shadow-sm text-center p-3"
+            >
+              <div class="card-body">
+                <div class="fs-1 mb-2">💻</div>
+                <h5 class="card-title fw-bold text-info">Developer Sistem</h5>
+                <p id="dev-name" class="card-text text-light-50 small">
+                  <!-- Diisi lewat JS -->
+                </p>
+                <a
+                  id="dev-email-btn"
+                  href="#"
+                  class="btn btn-outline-info w-100 fw-bold mt-2"
+                >
+                  Kirim Email Laporan
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 5. FOOTER -->
+    <footer
+      class="bg-dark text-center text-muted py-3 mt-5 border-top border-secondary"
+    >
+      <p class="mb-0 small">
+        &copy; 2026 Internal SI-CS J4. All Rights Reserved.
+      </p>
+    </footer>
+
+    <!-- PANGGIL KEDUA FILE JAVASCRIPT DI UJUNG BAWAH SEBELUM </body> -->
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+    <!-- Link JS Bootstrap 5.3.8 Terbaru via CDN Bundle (Termasuk Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
