@@ -27,7 +27,10 @@ webContent.videos.forEach((video) => {
 // 3. Tampilkan Data Kontak Admin & Developer
 document.getElementById("admin-name").innerText = webContent.kontak.admin.nama;
 document.getElementById("admin-wa-btn").href =
-  `https://wa.me/${webContent.kontak.admin.whatsapp}?text=${encodeURIComponent(webContent.kontak.admin.pesan)}`;
+  "https://wa.me" +
+  webContent.kontak.admin.whatsapp +
+  "?text=" +
+  encodeURIComponent(webContent.kontak.admin.pesan);
 
 document.getElementById("dev-name").innerText =
   webContent.kontak.developer.nama;
