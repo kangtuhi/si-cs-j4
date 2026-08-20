@@ -1,143 +1,140 @@
 <!doctype html>
 <html lang="id">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>SI-CS J4 | Sistem Informasi Cleaning Services</title>
-    <!-- Font Awesome for Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
+    <link rel="stylesheet" href="assets/css/cards.css" />
+    <link rel="stylesheet" href="assets/css/animations.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
   </head>
   <body>
-    <!-- Navbar -->
-    <nav id="navbar" class="glass-nav">
-      <div class="nav-container">
-        <a href="#" class="logo"> <i class="fas fa-sparkles"></i> SI-CS J4 </a>
-        <ul class="nav-links">
-          <li><a href="#home">Beranda</a></li>
-          <li><a href="#pengumuman">Pengumuman</a></li>
-          <li><a href="#sop">Panduan IKA</a></li>
-          <li><a href="#edukasi">Edukasi</a></li>
-        </ul>
-        <!-- Hamburger menu for mobile -->
-        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-      </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header id="home" class="hero-section">
-      <div class="hero-bg-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-      </div>
-      <div class="hero-content observe-element">
-        <h1 class="gradient-text">Sistem Informasi Cleaning Services</h1>
-        <p>
-          Pusat informasi panduan kerja, SOP, dan Instruksi Kerja Amalan (IKA)
-          digital untuk seluruh tim operasional kebersihan.
-        </p>
-        <div class="hero-buttons">
-          <a href="#sop" class="btn btn-primary"
-            ><i class="fas fa-book-open"></i> Jelajahi Panduan</a
-          >
-          <a href="#edukasi" class="btn btn-outline"
-            ><i class="fas fa-play-circle"></i> Tonton Edukasi</a
-          >
+    <div id="navbarMount"></div>
+    <main>
+      <section class="hero-section">
+        <div class="container position-relative">
+          <div class="row align-items-center min-vh-75">
+            <div class="col-lg-7 reveal">
+              <span class="eyebrow"
+                ><i class="bi bi-stars"></i> SISTEM INFORMASI CLEANING
+                SERVICES</span
+              >
+              <h1>
+                Standar Bersih.<br /><span>Kerja Lebih Profesional.</span>
+              </h1>
+              <p class="lead">
+                Informasi, panduan, SOP, alat & bahan, jadwal, serta video
+                pembelajaran cleaning services dalam satu sistem modern.
+              </p>
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <a href="panduan.html" class="btn btn-primary btn-lg px-4"
+                  >Mulai Belajar <i class="bi bi-arrow-right"></i></a
+                ><a href="video.html" class="btn btn-outline-dark btn-lg px-4"
+                  >Lihat Video <i class="bi bi-play-circle"></i
+                ></a>
+              </div>
+            </div>
+            <div class="col-lg-5 reveal delay-1">
+              <div class="hero-panel floating">
+                <div class="hero-orb orb-1"></div>
+                <div class="hero-orb orb-2"></div>
+                <div class="clean-icon"><i class="bi bi-stars"></i></div>
+                <h3>SI-CS J4</h3>
+                <p>
+                  Sistem informasi kerja yang lebih rapi, cepat, dan modern.
+                </p>
+                <div class="mini-grid">
+                  <div>
+                    <strong id="homeGuideCount">0</strong><span>Panduan</span>
+                  </div>
+                  <div>
+                    <strong id="homeVideoCount">0</strong><span>Video</span>
+                  </div>
+                  <div>
+                    <strong id="homeServiceCount">0</strong><span>Layanan</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </header>
+      </section>
 
-    <!-- Pengumuman Section -->
-    <section id="pengumuman" class="container observe-element">
-      <div class="section-header">
-        <h2><i class="fas fa-bullhorn"></i> Pengumuman Terbaru</h2>
-        <p>Update informasi dan instruksi dari manajemen.</p>
-      </div>
-      <div id="announcement-container" class="announcement-wrapper">
-        <!-- Rendered by JS -->
-      </div>
-    </section>
-
-    <!-- SOP & IKA Section -->
-    <section id="sop" class="container bg-light-curve observe-element">
-      <div class="section-header">
-        <h2>
-          <i class="fas fa-clipboard-list"></i> Instruksi Kerja Amalan (IKA)
-        </h2>
-        <p>Pilih kategori untuk melihat standar operasional prosedur.</p>
-      </div>
-      <div class="filter-container" id="category-filters">
-        <!-- Rendered by JS -->
-      </div>
-      <div class="grid-3" id="sop-container">
-        <!-- Rendered by JS -->
-      </div>
-    </section>
-
-    <!-- Video Edukasi Section -->
-    <section id="edukasi" class="container observe-element">
-      <div class="section-header">
-        <h2><i class="fas fa-video"></i> Video Edukasi & Praktik</h2>
-        <p>Tonton demonstrasi langsung untuk standar kebersihan yang tepat.</p>
-      </div>
-      <div class="grid-2" id="video-container">
-        <!-- Rendered by JS -->
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <div class="footer-content container">
-        <div class="footer-brand">
-          <h3><i class="fas fa-sparkles"></i> SI-CS J4</h3>
-          <p>
-            Sistem Informasi Cleaning Services Terpadu. Mendukung terciptanya
-            lingkungan yang bersih, sehat, dan nyaman.
-          </p>
+      <section class="py-5">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span>FITUR UTAMA</span>
+            <h2>Semua kebutuhan dalam satu tempat</h2>
+            <p>
+              Akses informasi penting cleaning services dengan antarmuka yang
+              nyaman digunakan.
+            </p>
+          </div>
+          <div class="row g-4" id="serviceContainer"></div>
         </div>
-        <div class="footer-links">
-          <h4>Pusat Bantuan</h4>
-          <!-- Ganti NOMOR_WA dengan nomor Anda, contoh: 6281234567890 (Gunakan 62, tanpa + atau 0) -->
-          <!-- Atau jika menggunakan fitur username WA terbaru, formatnya: https://wa.me/NamaUsername -->
-          <a
-            href="https://wa.me/tubagusmuhammadtuhi?text=Halo%20Admin%20SI-CS%20J4,%20saya%20butuh%20bantuan"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fab fa-whatsapp"></i> Hubungi Admin
-          </a>
+      </section>
 
-          <!-- Ganti EMAIL_ANDA dengan alamat email Anda -->
-          <a
-            href="mailto:tuhialkhan@gmail.com?subject=Laporan%20Kendala%20SI-CS%20J4"
-            target="_blank"
-            rel="noopener noreferrer"
+      <section class="py-5 bg-soft">
+        <div class="container">
+          <div
+            class="section-heading d-flex justify-content-between align-items-end flex-wrap gap-3 reveal"
           >
-            <i class="fas fa-envelope"></i> Laporkan Kendala
-          </a>
+            <div>
+              <span>PANDUAN TERBARU</span>
+              <h2>Belajar langkah demi langkah</h2>
+            </div>
+            <a href="panduan.html" class="btn btn-light border"
+              >Semua Panduan <i class="bi bi-arrow-right"></i
+            ></a>
+          </div>
+          <div class="row g-4" id="latestGuides"></div>
         </div>
-      </div>
-      <div class="footer-bottom">
-        <p>
-          &copy; 2026 SI-CS J4 Internal System. Made by
-          <a href="https://instagram.com/tubagusmuhammadtuhi" target="_blank"
-            >Tubagus Muhammad Tuhi</a
-          >.
-        </p>
-      </div>
-    </footer>
+      </section>
 
-    <!-- Back to top button -->
+      <section class="py-5">
+        <div class="container">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-5 reveal">
+              <span class="eyebrow">VIDEO PEMBELAJARAN</span>
+              <h2 class="display-6 fw-bold mt-3">
+                Belajar lebih mudah melalui video
+              </h2>
+              <p class="text-secondary">
+                Video YouTube responsif, kategori terorganisir, dan mudah
+                diperbarui melalui file data.
+              </p>
+              <a href="video.html" class="btn btn-primary">Buka Galeri Video</a>
+            </div>
+            <div class="col-lg-7">
+              <div class="row g-4" id="latestVideos"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="footerMount"></div>
     <button id="backToTop" class="back-to-top">
-      <i class="fas fa-arrow-up"></i>
+      <i class="bi bi-arrow-up"></i>
     </button>
-
-    <!-- Scripts -->
-    <script src="data.js"></script>
-    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/data/guides-data.js"></script>
+    <script src="assets/js/data/videos-data.js"></script>
+    <script src="assets/js/data/services-data.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/pages/home.js"></script>
   </body>
 </html>

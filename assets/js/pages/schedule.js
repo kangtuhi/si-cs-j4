@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{document.getElementById('scheduleContainer').innerHTML=scheduleData.map(x=>`<tr><td><strong>${x.day}</strong></td><td>${x.area}</td><td>${x.task}</td><td>${x.time}</td><td><span class="badge text-bg-primary">${x.staff}</span></td></tr>`).join('')});

@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{document.getElementById('informationContainer').innerHTML=informationData.map(x=>`<div class="col-md-6"><div class="info-card card"><div class="card-body"><div class="card-icon"><i class="bi ${x.icon}"></i></div><h4 class="mt-4">${x.title}</h4><p class="text-secondary mb-0">${x.description}</p></div></div></div>`).join('')});

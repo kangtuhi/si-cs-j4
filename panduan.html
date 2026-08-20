@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Panduan | SI-CS J4</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
+    <link rel="stylesheet" href="assets/css/cards.css" />
+    <link rel="stylesheet" href="assets/css/animations.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+  <body>
+    <div id="navbarMount"></div>
+    <main>
+      <section class="page-header">
+        <div class="container">
+          <span class="eyebrow">PUSAT PENGETAHUAN</span>
+          <h1>Panduan Cleaning Services</h1>
+          <p>
+            Temukan panduan kerja berdasarkan kategori dan tingkat kesulitan.
+          </p>
+        </div>
+      </section>
+      <section class="py-5">
+        <div class="container">
+          <div class="filter-panel mb-4">
+            <div class="input-group search-box">
+              <span class="input-group-text"><i class="bi bi-search"></i></span
+              ><input
+                id="guideSearch"
+                class="form-control"
+                placeholder="Cari panduan..."
+              />
+            </div>
+            <div id="guideFilters" class="filter-chips mt-3"></div>
+          </div>
+          <div class="row g-4" id="guidesContainer"></div>
+          <div id="emptyGuides" class="empty-state d-none">
+            <i class="bi bi-search"></i>
+            <h4>Data tidak ditemukan</h4>
+            <p>Coba kata kunci atau kategori lain.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="footerMount"></div>
+    <button id="backToTop" class="back-to-top">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+    <div class="modal fade" id="guideModal" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content" id="guideModalContent"></div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/data/guides-data.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/search.js"></script>
+    <script src="assets/js/modal.js"></script>
+    <script src="assets/js/pages/guides.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+function filterItems(items,query,category){query=query.toLowerCase();return items.filter(x=>(!query||`${x.title} ${x.description||''}`.toLowerCase().includes(query))&&(!category||x.category===category))}

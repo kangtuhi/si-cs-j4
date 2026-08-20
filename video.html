@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Video Panduan | SI-CS J4</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
+    <link rel="stylesheet" href="assets/css/cards.css" />
+    <link rel="stylesheet" href="assets/css/animations.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+  <body>
+    <div id="navbarMount"></div>
+    <main>
+      <section class="page-header">
+        <div class="container">
+          <span class="eyebrow">VIDEO LEARNING CENTER</span>
+          <h1>Video Panduan</h1>
+          <p>Pelajari teknik dan prosedur cleaning melalui video YouTube.</p>
+        </div>
+      </section>
+      <section class="py-5">
+        <div class="container">
+          <div class="filter-panel mb-4">
+            <div class="input-group search-box">
+              <span class="input-group-text"><i class="bi bi-search"></i></span
+              ><input
+                id="videoSearch"
+                class="form-control"
+                placeholder="Cari video..."
+              />
+            </div>
+            <div id="videoFilters" class="filter-chips mt-3"></div>
+          </div>
+          <div class="row g-4" id="videosContainer"></div>
+          <div id="emptyVideos" class="empty-state d-none">
+            <i class="bi bi-camera-video"></i>
+            <h4>Video tidak ditemukan</h4>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="footerMount"></div>
+    <button id="backToTop" class="back-to-top">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/data/videos-data.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/search.js"></script>
+    <script src="assets/js/pages/videos.js"></script>
+  </body>
+</html>

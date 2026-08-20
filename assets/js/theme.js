@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{const saved=localStorage.getItem('cleanpro-theme');if(saved==='dark')document.body.classList.add('dark-mode');document.getElementById('themeToggle')?.addEventListener('click',()=>{document.body.classList.toggle('dark-mode');localStorage.setItem('cleanpro-theme',document.body.classList.contains('dark-mode')?'dark':'light')})});
