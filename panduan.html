@@ -32,17 +32,52 @@
       </section>
       <section class="py-5">
         <div class="container">
+          <!-- Filter Panel -->
           <div class="filter-panel mb-4">
-            <div class="input-group search-box">
-              <span class="input-group-text"><i class="bi bi-search"></i></span
-              ><input
-                id="guideSearch"
-                class="form-control"
-                placeholder="Cari panduan..."
-              />
+            <div class="filter-header">
+              <div>
+                <span class="filter-label">
+                  <i class="bi bi-funnel-fill"></i>
+                  TEMUKAN PANDUAN
+                </span>
+                <h4>Cari berdasarkan kebutuhanmu</h4>
+              </div>
+
+              <span class="guide-count" id="guideCount"></span>
             </div>
-            <div id="guideFilters" class="filter-chips mt-3"></div>
+
+            <div class="search-box">
+              <i class="bi bi-search search-icon"></i>
+
+              <input
+                id="guideSearch"
+                type="search"
+                placeholder="Cari panduan cleaning..."
+                autocomplete="off"
+              />
+
+              <button
+                type="button"
+                class="clear-search"
+                id="clearGuideSearch"
+                aria-label="Hapus pencarian"
+              >
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </div>
+
+            <div class="filter-divider"></div>
+
+            <div class="filter-section">
+              <span class="filter-title">
+                <i class="bi bi-grid-3x3-gap"></i>
+                Kategori
+              </span>
+
+              <div id="guideFilters" class="filter-chips"></div>
+            </div>
           </div>
+          <!-- akhir filter panel -->
           <div class="row g-4" id="guidesContainer"></div>
           <div id="emptyGuides" class="empty-state d-none">
             <i class="bi bi-search"></i>
