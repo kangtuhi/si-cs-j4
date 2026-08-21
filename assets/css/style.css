@@ -1,1 +1,482 @@
-:root{--primary:#1677ff;--primary2:#0b5ed7;--dark:#101828;--muted:#667085;--bg:#f6f8fc;--card:#fff;--border:#e8ecf3}*{box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--dark)}body.dark-mode{--bg:#0f172a;--card:#172033;--dark:#f5f7fb;--muted:#a8b3c7;--border:#29364d}.bg-soft{background:linear-gradient(180deg,rgba(22,119,255,.05),transparent)}.min-vh-75{min-height:75vh}.hero-section{padding:80px 0 40px;overflow:hidden;background:radial-gradient(circle at 20% 20%,rgba(22,119,255,.14),transparent 35%),radial-gradient(circle at 80% 50%,rgba(115,82,255,.12),transparent 30%)}.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:8px 14px;border-radius:999px;background:rgba(22,119,255,.1);color:var(--primary);font-size:.78rem;font-weight:800;letter-spacing:.08em}.hero-section h1{font-size:clamp(2.7rem,6vw,5.5rem);font-weight:900;line-height:1.02;margin:22px 0}.hero-section h1 span{background:linear-gradient(90deg,var(--primary),#7a5cff);-webkit-background-clip:text;background-clip:text;color:transparent}.lead{color:var(--muted);max-width:650px}.btn{border-radius:14px;font-weight:700;transition:.25s}.btn-primary{background:linear-gradient(135deg,var(--primary),#5b4dff);border:0;box-shadow:0 10px 24px rgba(22,119,255,.2)}.btn:hover{transform:translateY(-2px)}.hero-panel,.content-card,.filter-panel,.schedule-card{background:var(--card);border:1px solid var(--border);border-radius:28px;box-shadow:0 25px 70px rgba(16,24,40,.08)}.hero-panel{padding:45px;text-align:center;position:relative;overflow:hidden}.clean-icon{width:100px;height:100px;margin:auto;border-radius:30px;display:grid;place-items:center;font-size:3rem;color:#fff;background:linear-gradient(135deg,var(--primary),#7a5cff);box-shadow:0 20px 40px rgba(22,119,255,.25)}.hero-panel h3{margin-top:20px;font-weight:900}.hero-panel p{color:var(--muted)}.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:25px}.mini-grid div{padding:15px 5px;background:rgba(22,119,255,.06);border-radius:18px}.mini-grid strong{display:block;font-size:1.5rem}.mini-grid span{font-size:.75rem;color:var(--muted)}.section-heading{margin-bottom:30px}.section-heading>span{color:var(--primary);font-weight:800;font-size:.8rem;letter-spacing:.1em}.section-heading h2{font-weight:900;margin:8px 0}.section-heading p{color:var(--muted)}.page-header{padding:145px 0 65px;background:linear-gradient(135deg,#101828,#1b3a67);color:#fff}.page-header h1{font-size:clamp(2.3rem,5vw,4rem);font-weight:900;margin:15px 0 8px}.page-header p{color:#cbd5e1}.search-box .input-group-text,.search-box .form-control{background:var(--card);border-color:var(--border);padding:14px}.search-box{max-width:650px}.filter-chips{display:flex;gap:10px;flex-wrap:wrap}.filter-chip{border:1px solid var(--border);background:var(--card);color:var(--dark);padding:8px 15px;border-radius:999px;font-weight:700}.filter-chip.active,.filter-chip:hover{background:var(--primary);color:#fff;border-color:var(--primary)}.empty-state{text-align:center;padding:60px;color:var(--muted)}.empty-state i{font-size:3rem}.back-to-top{position:fixed;right:22px;bottom:22px;width:48px;height:48px;border:0;border-radius:16px;background:var(--primary);color:#fff;z-index:999;display:none;box-shadow:0 15px 35px rgba(22,119,255,.35)}.back-to-top.show{display:block}.site-footer{background:#0d1422;color:#d6dce8;padding:55px 0 25px}.site-footer a{color:#d6dce8;text-decoration:none}.orb-1,.orb-2{position:absolute;border-radius:50%;filter:blur(5px);opacity:.25}.orb-1{width:150px;height:150px;background:#1677ff;top:-50px;left:-50px}.orb-2{width:120px;height:120px;background:#7a5cff;bottom:-45px;right:-35px}.form-control{border-radius:12px;padding:12px;border-color:var(--border);background:var(--card);color:var(--dark)}
+:root {
+  --primary: #1677ff;
+  --primary2: #0b5ed7;
+  --dark: #101828;
+  --muted: #667085;
+  --bg: #f6f8fc;
+  --card: #fff;
+  --border: #e8ecf3;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  background: var(--bg);
+  color: var(--dark);
+}
+body.dark-mode {
+  --bg: #0f172a;
+  --card: #172033;
+  --dark: #f5f7fb;
+  --muted: #a8b3c7;
+  --border: #29364d;
+}
+.bg-soft {
+  background: linear-gradient(180deg, rgba(22, 119, 255, 0.05), transparent);
+}
+.min-vh-75 {
+  min-height: 75vh;
+}
+.hero-section {
+  padding: 80px 0 40px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(22, 119, 255, 0.14),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(115, 82, 255, 0.12),
+      transparent 30%
+    );
+}
+.eyebrow {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(22, 119, 255, 0.1);
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+.hero-section h1 {
+  font-size: clamp(2.7rem, 6vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1.02;
+  margin: 22px 0;
+}
+.hero-section h1 span {
+  background: linear-gradient(90deg, var(--primary), #7a5cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.lead {
+  color: var(--muted);
+  max-width: 650px;
+}
+.btn {
+  border-radius: 14px;
+  font-weight: 700;
+  transition: 0.25s;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), #5b4dff);
+  border: 0;
+  box-shadow: 0 10px 24px rgba(22, 119, 255, 0.2);
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.hero-panel,
+.content-card,
+.filter-panel,
+.schedule-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: 0 25px 70px rgba(16, 24, 40, 0.08);
+}
+.hero-panel {
+  padding: 45px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.clean-icon {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  border-radius: 30px;
+  display: grid;
+  place-items: center;
+  font-size: 3rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), #7a5cff);
+  box-shadow: 0 20px 40px rgba(22, 119, 255, 0.25);
+}
+.hero-panel h3 {
+  margin-top: 20px;
+  font-weight: 900;
+}
+.hero-panel p {
+  color: var(--muted);
+}
+.mini-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 25px;
+}
+.mini-grid div {
+  padding: 15px 5px;
+  background: rgba(22, 119, 255, 0.06);
+  border-radius: 18px;
+}
+.mini-grid strong {
+  display: block;
+  font-size: 1.5rem;
+}
+.mini-grid span {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.section-heading {
+  margin-bottom: 30px;
+}
+.section-heading > span {
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+.section-heading h2 {
+  font-weight: 900;
+  margin: 8px 0;
+}
+.section-heading p {
+  color: var(--muted);
+}
+.page-header {
+  padding: 145px 0 65px;
+  background: linear-gradient(135deg, #101828, #1b3a67);
+  color: #fff;
+}
+.page-header h1 {
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  font-weight: 900;
+  margin: 15px 0 8px;
+}
+.page-header p {
+  color: #cbd5e1;
+}
+.search-box .input-group-text,
+.search-box .form-control {
+  background: var(--card);
+  border-color: var(--border);
+  padding: 14px;
+}
+.search-box {
+  max-width: 650px;
+}
+.filter-chips {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.filter-chip {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--dark);
+  padding: 8px 15px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+.filter-chip.active,
+.filter-chip:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+.empty-state {
+  text-align: center;
+  padding: 60px;
+  color: var(--muted);
+}
+.empty-state i {
+  font-size: 3rem;
+}
+.back-to-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 16px;
+  background: var(--primary);
+  color: #fff;
+  z-index: 999;
+  display: none;
+  box-shadow: 0 15px 35px rgba(22, 119, 255, 0.35);
+}
+.back-to-top.show {
+  display: block;
+}
+.site-footer {
+  background: #0d1422;
+  color: #d6dce8;
+  padding: 55px 0 25px;
+}
+.site-footer a {
+  color: #d6dce8;
+  text-decoration: none;
+}
+.orb-1,
+.orb-2 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(5px);
+  opacity: 0.25;
+}
+.orb-1 {
+  width: 150px;
+  height: 150px;
+  background: #1677ff;
+  top: -50px;
+  left: -50px;
+}
+.orb-2 {
+  width: 120px;
+  height: 120px;
+  background: #7a5cff;
+  bottom: -45px;
+  right: -35px;
+}
+.form-control {
+  border-radius: 12px;
+  padding: 12px;
+  border-color: var(--border);
+  background: var(--card);
+  color: var(--dark);
+}
+
+/* =========================================
+   JADWAL CLEANING - TABLE
+========================================= */
+
+.schedule-card {
+  width: 100%;
+  border-radius: 18px;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  background: #ffffff;
+  border: 1px solid #dbeafe;
+  box-shadow: 0 8px 25px rgba(30, 64, 175, 0.08);
+
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Tabel tetap memiliki ukuran nyaman */
+.schedule-card table {
+  width: 100%;
+  min-width: 750px;
+  margin-bottom: 0;
+}
+
+/* ================= HEADER ================= */
+
+.schedule-card thead th {
+  background: #2563eb;
+  color: #ffffff;
+
+  padding: 17px 20px;
+
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  white-space: nowrap;
+  border: none;
+}
+
+/* ================= BODY ================= */
+
+.schedule-card tbody td {
+  padding: 17px 20px;
+  vertical-align: middle;
+
+  border-color: #dbeafe;
+}
+
+/* BARIS GANJIL - BIRU PASTEL */
+.schedule-card tbody tr:nth-child(odd) td {
+  background-color: #eaf4ff;
+}
+
+/* BARIS GENAP - PUTIH */
+.schedule-card tbody tr:nth-child(even) td {
+  background-color: #ffffff;
+}
+
+/* HOVER */
+.schedule-card tbody tr {
+  transition: transform 0.2s ease;
+}
+
+.schedule-card tbody tr:hover td {
+  background-color: #dbeafe;
+}
+
+/* ================= HARI ================= */
+
+.day-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #1e3a8a;
+  white-space: nowrap;
+}
+
+.day-name i {
+  font-size: 16px;
+}
+
+/* ================= AREA ================= */
+
+.area-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 7px 11px;
+
+  background: #dbeafe;
+  color: #1d4ed8;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+/* ================= AKTIVITAS ================= */
+
+.task-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #334155;
+}
+
+.task-text i {
+  color: #2563eb;
+  font-size: 17px;
+}
+
+/* ================= WAKTU ================= */
+
+.time-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #475569;
+
+  white-space: nowrap;
+}
+
+/* ================= PETUGAS ================= */
+
+.staff-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 8px 13px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+/* ================= SCROLLBAR ================= */
+
+.schedule-card::-webkit-scrollbar {
+  height: 7px;
+}
+
+.schedule-card::-webkit-scrollbar-track {
+  background: #eff6ff;
+}
+
+.schedule-card::-webkit-scrollbar-thumb {
+  background: #93c5fd;
+  border-radius: 10px;
+}
+
+.schedule-card::-webkit-scrollbar-thumb:hover {
+  background: #60a5fa;
+}
+
+/* =========================================
+   RESPONSIVE MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .schedule-card {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 14px;
+  }
+
+  .schedule-card table {
+    min-width: 680px;
+  }
+
+  .schedule-card thead th {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+
+  .schedule-card tbody td {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .schedule-card table {
+    min-width: 650px;
+  }
+
+  .schedule-card thead th {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+
+  .schedule-card tbody td {
+    padding: 13px 14px;
+    font-size: 13px;
+  }
+
+  .area-badge,
+  .staff-badge {
+    font-size: 12px;
+  }
+}
