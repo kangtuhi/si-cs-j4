@@ -4,17 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Panduan | SI-CS J4</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/navbar.css" />
     <link rel="stylesheet" href="assets/css/cards.css" />
+    <link rel="stylesheet" href="assets/css/darkmode-pages.css" />
     <link rel="stylesheet" href="assets/css/animations.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
   </head>
@@ -25,77 +20,40 @@
         <div class="container">
           <span class="eyebrow">PUSAT PENGETAHUAN</span>
           <h1>Panduan Cleaning Services</h1>
-          <p>
-            Temukan panduan kerja berdasarkan kategori dan tingkat kesulitan.
-          </p>
+          <p>Temukan panduan kerja berdasarkan kategori dan tingkat kesulitan.</p>
         </div>
       </section>
       <section class="py-5">
         <div class="container">
-          <!-- Filter Panel -->
           <div class="filter-panel mb-4">
             <div class="filter-header">
               <div>
-                <span class="filter-label">
-                  <i class="bi bi-funnel-fill"></i>
-                  TEMUKAN PANDUAN
-                </span>
+                <span class="filter-label"><i class="bi bi-funnel-fill"></i> TEMUKAN PANDUAN</span>
                 <h4>Cari berdasarkan kebutuhanmu</h4>
               </div>
-
               <span class="guide-count" id="guideCount"></span>
             </div>
-
             <div class="search-box">
               <i class="bi bi-search search-icon"></i>
-
-              <input
-                id="guideSearch"
-                type="search"
-                placeholder="Cari panduan cleaning..."
-                autocomplete="off"
-              />
-
-              <button
-                type="button"
-                class="clear-search"
-                id="clearGuideSearch"
-                aria-label="Hapus pencarian"
-              >
-                <i class="bi bi-x-lg"></i>
-              </button>
+              <input id="guideSearch" type="search" placeholder="Cari panduan cleaning..." autocomplete="off" />
+              <button type="button" class="clear-search" id="clearGuideSearch" aria-label="Hapus pencarian"><i class="bi bi-x-lg"></i></button>
             </div>
-
             <div class="filter-divider"></div>
-
             <div class="filter-section">
-              <span class="filter-title">
-                <i class="bi bi-grid-3x3-gap"></i>
-                Kategori
-              </span>
-
+              <span class="filter-title"><i class="bi bi-grid-3x3-gap"></i> Kategori</span>
               <div id="guideFilters" class="filter-chips"></div>
             </div>
           </div>
-          <!-- akhir filter panel -->
           <div class="row g-4" id="guidesContainer"></div>
           <div id="emptyGuides" class="empty-state d-none">
-            <i class="bi bi-search"></i>
-            <h4>Data tidak ditemukan</h4>
-            <p>Coba kata kunci atau kategori lain.</p>
+            <i class="bi bi-search"></i><h4>Data tidak ditemukan</h4><p>Coba kata kunci atau kategori lain.</p>
           </div>
         </div>
       </section>
     </main>
     <div id="footerMount"></div>
-    <button id="backToTop" class="back-to-top">
-      <i class="bi bi-arrow-up"></i>
-    </button>
-    <div class="modal fade" id="guideModal" tabindex="-1">
-      <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content" id="guideModalContent"></div>
-      </div>
-    </div>
+    <button id="backToTop" class="back-to-top"><i class="bi bi-arrow-up"></i></button>
+    <div class="modal fade" id="guideModal" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content" id="guideModalContent"></div></div></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/data/guides-data.js"></script>
     <script src="assets/js/components.js"></script>
