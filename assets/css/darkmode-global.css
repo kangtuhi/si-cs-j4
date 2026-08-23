@@ -1,7 +1,24 @@
 /* =========================================
-   GLOBAL DARK MODE - CARD TYPOGRAPHY
-   Menyamakan warna judul/teks seluruh card
+   GLOBAL DARK MODE - CARD & COMPONENTS
 ========================================= */
+
+body.dark-mode .feature-card,
+body.dark-mode .guide-card,
+body.dark-mode .video-card,
+body.dark-mode .staff-card,
+body.dark-mode .equipment-card,
+body.dark-mode .stat-card,
+body.dark-mode .info-card {
+  background: var(--card) !important;
+  color: var(--dark);
+  border-color: var(--border) !important;
+}
+
+body.dark-mode .feature-card .card-body,
+body.dark-mode .guide-card .card-body,
+body.dark-mode .video-card .video-info {
+  background: transparent;
+}
 
 body.dark-mode .feature-card h1,
 body.dark-mode .feature-card h2,
@@ -58,7 +75,6 @@ body.dark-mode .info-card p {
   color: var(--muted) !important;
 }
 
-/* Elemen Bootstrap yang sering memaksa warna gelap */
 body.dark-mode .card-title,
 body.dark-mode .card-text,
 body.dark-mode .text-dark,
@@ -71,7 +87,6 @@ body.dark-mode .text-muted {
   color: var(--muted) !important;
 }
 
-/* Link di dalam card */
 body.dark-mode .feature-card a:not(.btn),
 body.dark-mode .guide-card a:not(.btn),
 body.dark-mode .video-card a:not(.btn),
