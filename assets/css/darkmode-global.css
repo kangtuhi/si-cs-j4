@@ -21,3 +21,12 @@ body.dark-mode .schedule-card .table tbody tr:nth-child(even) td { background:#1
 body.dark-mode .schedule-card .table tbody tr:hover td { background:#243554; color:#f1f5f9; border-color:#3b82f6; }
 body.dark-mode .schedule-card .table tbody td { transition:background-color .2s ease,color .2s ease,border-color .2s ease; }
 body.dark-mode .schedule-card .table-responsive { background:var(--card); }
+
+/* =========================================
+   TABLE AUDIT — LIGHT/DARK + MOBILE
+========================================= */
+.schedule-card .table{border-collapse:separate;border-spacing:0}.schedule-card .table td,.schedule-card .table th{vertical-align:middle}.schedule-card .table-responsive{overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;scrollbar-color:#93c5fd transparent;-webkit-overflow-scrolling:touch}.schedule-card .table-responsive::-webkit-scrollbar{height:7px}.schedule-card .table-responsive::-webkit-scrollbar-track{background:transparent}.schedule-card .table-responsive::-webkit-scrollbar-thumb{background:#93c5fd;border-radius:999px}.schedule-card .table-responsive::-webkit-scrollbar-thumb:hover{background:#60a5fa}.schedule-card .day-name,.schedule-card .task-text,.schedule-card .time-badge{min-width:max-content}.schedule-card .area-badge,.schedule-card .staff-badge{white-space:nowrap}.schedule-card .table thead th{position:sticky;top:0;z-index:2}.schedule-card .table tbody tr{transition:background-color .2s ease}.schedule-card .table tbody tr:hover .area-badge{background:#bfdbfe}.schedule-card .table tbody tr:hover .staff-badge{filter:brightness(1.05)}
+body.dark-mode .schedule-card .table-responsive{scrollbar-color:#475569 transparent}body.dark-mode .schedule-card .table tbody tr:hover .area-badge{background:#1e40af;color:#dbeafe}body.dark-mode .schedule-card .table tbody tr:hover .staff-badge{background:#3b82f6;color:#fff}
+@media(max-width:768px){.schedule-card{border-radius:20px}.schedule-card .table{min-width:720px}.schedule-card .table thead th{padding:15px 16px;font-size:.82rem}.schedule-card .table tbody td{padding:15px 16px;font-size:.85rem}.schedule-card .area-badge,.schedule-card .staff-badge{padding:7px 10px;font-size:.78rem}.schedule-card .task-text{line-height:1.45}}
+@media(max-width:480px){.schedule-card .table{min-width:680px}.schedule-card .table thead th{padding:13px 14px}.schedule-card .table tbody td{padding:13px 14px;font-size:.8rem}}
+@media(prefers-reduced-motion:reduce){.schedule-card .table tbody tr,.schedule-card .table tbody td{transition:none!important}}
