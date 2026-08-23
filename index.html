@@ -4,17 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>SI-CS J4 | Sistem Informasi Cleaning Services</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/navbar.css" />
     <link rel="stylesheet" href="assets/css/cards.css" />
+    <link rel="stylesheet" href="assets/css/darkmode-global.css" />
     <link rel="stylesheet" href="assets/css/animations.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
   </head>
@@ -25,116 +20,38 @@
         <div class="container position-relative">
           <div class="row align-items-center min-vh-75">
             <div class="col-lg-7 reveal">
-              <span class="eyebrow"
-                ><i class="bi bi-stars"></i> SISTEM INFORMASI CLEANING
-                SERVICES</span
-              >
-              <h1>
-                Standar Bersih.<br /><span>Kerja Lebih Profesional.</span>
-              </h1>
-              <p class="lead">
-                Informasi, panduan, SOP, alat & bahan, jadwal, serta video
-                pembelajaran cleaning services dalam satu sistem modern.
-              </p>
+              <span class="eyebrow"><i class="bi bi-stars"></i> SISTEM INFORMASI CLEANING SERVICES</span>
+              <h1>Standar Bersih.<br /><span>Kerja Lebih Profesional.</span></h1>
+              <p class="lead">Informasi, panduan, SOP, alat & bahan, jadwal, serta video pembelajaran cleaning services dalam satu sistem modern.</p>
               <div class="d-flex flex-wrap gap-3 mt-4">
-                <a href="panduan.html" class="btn btn-primary btn-lg px-4"
-                  >Mulai Belajar <i class="bi bi-arrow-right"></i></a
-                ><a href="video.html" class="btn btn-outline-dark btn-lg px-4"
-                  >Lihat Video <i class="bi bi-play-circle"></i
-                ></a>
+                <a href="panduan.html" class="btn btn-primary btn-lg px-4">Mulai Belajar <i class="bi bi-arrow-right"></i></a>
+                <a href="video.html" class="btn btn-outline-dark btn-lg px-4">Lihat Video <i class="bi bi-play-circle"></i></a>
               </div>
             </div>
             <div class="col-lg-5 reveal delay-1">
               <div class="hero-panel floating">
-                <div class="hero-orb orb-1"></div>
-                <div class="hero-orb orb-2"></div>
+                <div class="hero-orb orb-1"></div><div class="hero-orb orb-2"></div>
                 <div class="clean-icon"><i class="bi bi-stars"></i></div>
                 <h3>SI-CS J4</h3>
-                <p>
-                  Sistem informasi kerja yang lebih rapi, cepat, dan modern.
-                </p>
+                <p>Sistem informasi kerja yang lebih rapi, cepat, dan modern.</p>
                 <div class="mini-grid">
-                  <div>
-                    <strong id="homeGuideCount">0</strong><span>Panduan</span>
-                  </div>
-                  <div>
-                    <strong id="homeVideoCount">0</strong><span>Video</span>
-                  </div>
-                  <div>
-                    <strong id="homeServiceCount">0</strong><span>Layanan</span>
-                  </div>
+                  <div><strong id="homeGuideCount">0</strong><span>Panduan</span></div>
+                  <div><strong id="homeVideoCount">0</strong><span>Video</span></div>
+                  <div><strong id="homeServiceCount">0</strong><span>Layanan</span></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      <section class="py-5">
-        <div class="container">
-          <div class="section-heading reveal">
-            <span>FITUR UTAMA</span>
-            <h2>Semua kebutuhan dalam satu tempat</h2>
-            <p>
-              Akses informasi penting cleaning services dengan antarmuka yang
-              nyaman digunakan.
-            </p>
-          </div>
-          <div class="row g-4" id="serviceContainer"></div>
-        </div>
-      </section>
-
-      <section class="py-5 bg-soft">
-        <div class="container">
-          <div
-            class="section-heading d-flex justify-content-between align-items-end flex-wrap gap-3 reveal"
-          >
-            <div>
-              <span>PANDUAN TERBARU</span>
-              <h2>Belajar langkah demi langkah</h2>
-            </div>
-            <a href="panduan.html" class="btn btn-light border"
-              >Semua Panduan <i class="bi bi-arrow-right"></i
-            ></a>
-          </div>
-          <div class="row g-4" id="latestGuides"></div>
-        </div>
-      </section>
-
-      <section class="py-5">
-        <div class="container">
-          <div class="row g-4 align-items-center">
-            <div class="col-lg-5 reveal">
-              <span class="eyebrow">VIDEO PEMBELAJARAN</span>
-              <h2 class="display-6 fw-bold mt-3">
-                Belajar lebih mudah melalui video
-              </h2>
-              <p class="text-secondary">
-                Video YouTube responsif, kategori terorganisir, dan mudah
-                diperbarui melalui file data.
-              </p>
-              <a href="video.html" class="btn btn-primary">Buka Galeri Video</a>
-            </div>
-            <div class="col-lg-7">
-              <div class="row g-4" id="latestVideos"></div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section class="py-5"><div class="container"><div class="section-heading reveal"><span>FITUR UTAMA</span><h2>Semua kebutuhan dalam satu tempat</h2><p>Akses informasi penting cleaning services dengan antarmuka yang nyaman digunakan.</p></div><div class="row g-4" id="serviceContainer"></div></div></section>
+      <section class="py-5 bg-soft"><div class="container"><div class="section-heading d-flex justify-content-between align-items-end flex-wrap gap-3 reveal"><div><span>PANDUAN TERBARU</span><h2>Belajar langkah demi langkah</h2></div><a href="panduan.html" class="btn btn-light border">Semua Panduan <i class="bi bi-arrow-right"></i></a></div><div class="row g-4" id="latestGuides"></div></div></section>
+      <section class="py-5"><div class="container"><div class="row g-4 align-items-center"><div class="col-lg-5 reveal"><span class="eyebrow">VIDEO PEMBELAJARAN</span><h2 class="display-6 fw-bold mt-3">Belajar lebih mudah melalui video</h2><p class="text-secondary">Video YouTube responsif, kategori terorganisir, dan mudah diperbarui melalui file data.</p><a href="video.html" class="btn btn-primary">Buka Galeri Video</a></div><div class="col-lg-7"><div class="row g-4" id="latestVideos"></div></div></div></div></section>
     </main>
     <div id="footerMount"></div>
-    <button id="backToTop" class="back-to-top">
-      <i class="bi bi-arrow-up"></i>
-    </button>
+    <button id="backToTop" class="back-to-top"><i class="bi bi-arrow-up"></i></button>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/data/guides-data.js"></script>
-    <script src="assets/js/data/videos-data.js"></script>
-    <script src="assets/js/data/services-data.js"></script>
-    <script src="assets/js/components.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/navbar.js"></script>
-    <script src="assets/js/theme.js"></script>
-    <script src="assets/js/animations.js"></script>
-    <script src="assets/js/pages/home.js"></script>
+    <script src="assets/js/data/guides-data.js"></script><script src="assets/js/data/videos-data.js"></script><script src="assets/js/data/services-data.js"></script>
+    <script src="assets/js/components.js"></script><script src="assets/js/main.js"></script><script src="assets/js/navbar.js"></script><script src="assets/js/theme.js"></script><script src="assets/js/animations.js"></script><script src="assets/js/pages/home.js"></script>
   </body>
 </html>
