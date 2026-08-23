@@ -1,0 +1,11 @@
+/* =========================================================
+   SI-CS J4 — FINAL RESPONSIVE AUDIT
+   Small consistency fixes only; no layout redesign.
+========================================================= */
+img,iframe,video{max-width:100%}
+pre,code{max-width:100%;overflow-x:auto}
+.btn,.contact-action-btn,.submit-contact-btn{touch-action:manipulation}
+@media(max-width:991px){.container{--bs-gutter-x:1.5rem}.section-heading{margin-bottom:28px}.page-header{padding-top:125px!important}.table-responsive{-webkit-overflow-scrolling:touch;scrollbar-width:thin}}
+@media(max-width:576px){body{overflow-x:hidden}.container{--bs-gutter-x:1.25rem}.page-header{padding-top:112px!important;padding-bottom:42px!important}.page-header h1{line-height:1.12}.page-header p{font-size:.94rem;line-height:1.65}.section-heading h2{line-height:1.2}.section-heading p{line-height:1.65}.hero-section{overflow:hidden}.card-body{overflow-wrap:anywhere}.guide-meta{flex-wrap:wrap}.contact-display{overflow-wrap:anywhere}.social-buttons{flex-wrap:wrap}.social-circle{flex:0 0 auto}.table-responsive{border-radius:14px}.table{font-size:.86rem}}
+@media(min-width:992px){.table-responsive{scrollbar-width:thin}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
