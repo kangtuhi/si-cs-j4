@@ -16,85 +16,58 @@ body.dark-mode .info-card {
 
 body.dark-mode .feature-card .card-body,
 body.dark-mode .guide-card .card-body,
-body.dark-mode .video-card .video-info {
-  background: transparent;
+body.dark-mode .video-card .video-info { background: transparent; }
+
+body.dark-mode .feature-card h1,body.dark-mode .feature-card h2,body.dark-mode .feature-card h3,body.dark-mode .feature-card h4,body.dark-mode .feature-card h5,body.dark-mode .feature-card h6,
+body.dark-mode .guide-card h1,body.dark-mode .guide-card h2,body.dark-mode .guide-card h3,body.dark-mode .guide-card h4,body.dark-mode .guide-card h5,body.dark-mode .guide-card h6,
+body.dark-mode .video-card h1,body.dark-mode .video-card h2,body.dark-mode .video-card h3,body.dark-mode .video-card h4,body.dark-mode .video-card h5,body.dark-mode .video-card h6,
+body.dark-mode .staff-card h1,body.dark-mode .staff-card h2,body.dark-mode .staff-card h3,body.dark-mode .staff-card h4,body.dark-mode .staff-card h5,body.dark-mode .staff-card h6,
+body.dark-mode .equipment-card h1,body.dark-mode .equipment-card h2,body.dark-mode .equipment-card h3,body.dark-mode .equipment-card h4,body.dark-mode .equipment-card h5,body.dark-mode .equipment-card h6,
+body.dark-mode .stat-card h1,body.dark-mode .stat-card h2,body.dark-mode .stat-card h3,body.dark-mode .stat-card h4,body.dark-mode .stat-card h5,body.dark-mode .stat-card h6,
+body.dark-mode .info-card h1,body.dark-mode .info-card h2,body.dark-mode .info-card h3,body.dark-mode .info-card h4,body.dark-mode .info-card h5,body.dark-mode .info-card h6,
+body.dark-mode .card-title { color:#e2e8f0 !important; }
+
+body.dark-mode .feature-card p,body.dark-mode .guide-card p,body.dark-mode .video-card p,body.dark-mode .staff-card p,body.dark-mode .equipment-card p,body.dark-mode .stat-card p,body.dark-mode .info-card p,body.dark-mode .card-text { color:#94a3b8 !important; }
+body.dark-mode .text-dark,body.dark-mode .text-body { color:#e2e8f0 !important; }
+body.dark-mode .text-secondary,body.dark-mode .text-muted { color:#94a3b8 !important; }
+body.dark-mode .feature-card a:not(.btn),body.dark-mode .guide-card a:not(.btn),body.dark-mode .video-card a:not(.btn),body.dark-mode .staff-card a:not(.btn),body.dark-mode .equipment-card a:not(.btn),body.dark-mode .stat-card a:not(.btn),body.dark-mode .info-card a:not(.btn) { color:#93c5fd; }
+
+/* =========================================
+   JADWAL — TABLE DARK MODE
+========================================= */
+body.dark-mode .schedule-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(0,0,0,.22);
 }
 
-/* Judul card: putih lembut agar nyaman dibaca di dark mode */
-body.dark-mode .feature-card h1,
-body.dark-mode .feature-card h2,
-body.dark-mode .feature-card h3,
-body.dark-mode .feature-card h4,
-body.dark-mode .feature-card h5,
-body.dark-mode .feature-card h6,
-body.dark-mode .guide-card h1,
-body.dark-mode .guide-card h2,
-body.dark-mode .guide-card h3,
-body.dark-mode .guide-card h4,
-body.dark-mode .guide-card h5,
-body.dark-mode .guide-card h6,
-body.dark-mode .video-card h1,
-body.dark-mode .video-card h2,
-body.dark-mode .video-card h3,
-body.dark-mode .video-card h4,
-body.dark-mode .video-card h5,
-body.dark-mode .video-card h6,
-body.dark-mode .staff-card h1,
-body.dark-mode .staff-card h2,
-body.dark-mode .staff-card h3,
-body.dark-mode .staff-card h4,
-body.dark-mode .staff-card h5,
-body.dark-mode .staff-card h6,
-body.dark-mode .equipment-card h1,
-body.dark-mode .equipment-card h2,
-body.dark-mode .equipment-card h3,
-body.dark-mode .equipment-card h4,
-body.dark-mode .equipment-card h5,
-body.dark-mode .equipment-card h6,
-body.dark-mode .stat-card h1,
-body.dark-mode .stat-card h2,
-body.dark-mode .stat-card h3,
-body.dark-mode .stat-card h4,
-body.dark-mode .stat-card h5,
-body.dark-mode .stat-card h6,
-body.dark-mode .info-card h1,
-body.dark-mode .info-card h2,
-body.dark-mode .info-card h3,
-body.dark-mode .info-card h4,
-body.dark-mode .info-card h5,
-body.dark-mode .info-card h6,
-body.dark-mode .card-title {
-  color: #e2e8f0 !important;
+body.dark-mode .schedule-card .table {
+  --bs-table-bg: var(--card);
+  --bs-table-color: #e2e8f0;
+  --bs-table-border-color: var(--border);
+  color: #e2e8f0;
+  background: var(--card);
 }
 
-/* Isi card: abu-abu lembut */
-body.dark-mode .feature-card p,
-body.dark-mode .guide-card p,
-body.dark-mode .video-card p,
-body.dark-mode .staff-card p,
-body.dark-mode .equipment-card p,
-body.dark-mode .stat-card p,
-body.dark-mode .info-card p,
-body.dark-mode .card-text {
-  color: #94a3b8 !important;
+body.dark-mode .schedule-card .table thead th {
+  background: #172033;
+  color: #e2e8f0;
+  border-color: var(--border);
+  font-weight: 800;
+  white-space: nowrap;
 }
 
-body.dark-mode .text-dark,
-body.dark-mode .text-body {
-  color: #e2e8f0 !important;
+body.dark-mode .schedule-card .table tbody td {
+  background: var(--card);
+  color: #94a3b8;
+  border-color: var(--border);
 }
 
-body.dark-mode .text-secondary,
-body.dark-mode .text-muted {
-  color: #94a3b8 !important;
+body.dark-mode .schedule-card .table tbody tr:hover td {
+  background: #172033;
+  color: #e2e8f0;
 }
 
-body.dark-mode .feature-card a:not(.btn),
-body.dark-mode .guide-card a:not(.btn),
-body.dark-mode .video-card a:not(.btn),
-body.dark-mode .staff-card a:not(.btn),
-body.dark-mode .equipment-card a:not(.btn),
-body.dark-mode .stat-card a:not(.btn),
-body.dark-mode .info-card a:not(.btn) {
-  color: #93c5fd;
-}
+body.dark-mode .schedule-card .table-responsive { background: var(--card); }
