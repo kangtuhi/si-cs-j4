@@ -2,482 +2,60 @@
 <html lang="id">
   <head>
     <meta charset="utf-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <meta
-      name="description"
-      content="Hubungi SI-CS J4 melalui WhatsApp, Email, atau Instagram."
-    />
-
+    <meta name="description" content="Hubungi SI-CS J4 melalui WhatsApp, Email, atau Instagram." />
     <title>Kontak | SI-CS J4</title>
-
-    <!-- Bootstrap 5.3.8 -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-
-    <!-- Bootstrap Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-
-    <!-- Global CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/navbar.css" />
     <link rel="stylesheet" href="assets/css/cards.css" />
+    <link rel="stylesheet" href="assets/css/darkmode-global.css" />
     <link rel="stylesheet" href="assets/css/animations.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
-
-    <!-- Contact Custom CSS -->
-    <link rel="stylesheet" href="assets/css/contactdev.css" />
+    <link rel="stylesheet" href="assets/css/contact.css" />
   </head>
-
   <body>
-    <!-- Navbar -->
     <div id="navbarMount"></div>
-
     <main>
-      <!-- =====================================================
-             HERO CONTACT
-        ====================================================== -->
-
       <section class="contact-hero">
-        <div class="contact-blob blob-one"></div>
-        <div class="contact-blob blob-two"></div>
-        <div class="contact-blob blob-three"></div>
-
-        <div class="container position-relative">
-          <div class="row justify-content-center">
-            <div class="col-lg-9 text-center contact-hero-content">
-              <span class="contact-eyebrow">
-                <i class="bi bi-chat-heart"></i>
-
-                HUBUNGI KAMI
-              </span>
-
-              <h1>
-                Mari Terhubung
-                <span>Dengan Kami</span>
-              </h1>
-
-              <p>
-                Punya pertanyaan, saran, atau ingin mendapatkan informasi lebih
-                lanjut? Hubungi kami melalui platform favorit Anda.
-              </p>
-
-              <div class="contact-hero-buttons">
-                <a href="#contactFormSection" class="btn-contact-primary">
-                  <i class="bi bi-send"></i>
-
-                  Kirim Pesan
-                </a>
-
-                <button
-                  type="button"
-                  class="btn-contact-secondary"
-                  id="scrollToSocial"
-                >
-                  <i class="bi bi-share"></i>
-
-                  Media Sosial
-                </button>
-              </div>
-            </div>
+        <div class="contact-blob blob-one"></div><div class="contact-blob blob-two"></div><div class="contact-blob blob-three"></div>
+        <div class="container position-relative"><div class="row justify-content-center"><div class="col-lg-9 text-center contact-hero-content">
+          <span class="contact-eyebrow"><i class="bi bi-chat-heart"></i> HUBUNGI KAMI</span>
+          <h1>Mari Terhubung <span>Dengan Kami</span></h1>
+          <p>Punya pertanyaan, saran, atau ingin mendapatkan informasi lebih lanjut? Hubungi kami melalui platform favorit Anda.</p>
+          <div class="contact-hero-buttons">
+            <a href="#contactFormSection" class="btn-contact-primary"><i class="bi bi-send"></i> Kirim Pesan</a>
+            <button type="button" class="btn-contact-secondary" id="scrollToSocial"><i class="bi bi-share"></i> Media Sosial</button>
           </div>
-        </div>
+        </div></div></div>
       </section>
 
-      <!-- =====================================================
-             CONTACT CARDS
-        ====================================================== -->
-
-      <section class="contact-method-section" id="contactMethods">
-        <div class="container">
-          <div class="section-heading text-center">
-            <span>PILIH CARA MENGHUBUNGI</span>
-
-            <h2>Kami Siap Membantu Anda</h2>
-
-            <p>Pilih salah satu platform di bawah ini.</p>
-          </div>
-
-          <div class="row g-4 justify-content-center">
-            <!-- WhatsApp -->
-
-            <div class="col-md-6 col-lg-4">
-              <div class="contact-method-card whatsapp-card">
-                <div class="contact-card-glow"></div>
-
-                <div class="contact-icon-box whatsapp-icon">
-                  <i class="bi bi-whatsapp"></i>
-                </div>
-
-                <h3>WhatsApp</h3>
-
-                <p>
-                  Hubungi kami langsung melalui WhatsApp untuk komunikasi yang
-                  lebih cepat.
-                </p>
-
-                <span class="contact-display" id="whatsappDisplay">
-                  Memuat kontak...
-                </span>
-
-                <button
-                  class="contact-action-btn whatsapp-btn"
-                  id="whatsappButton"
-                  type="button"
-                >
-                  Chat WhatsApp
-
-                  <i class="bi bi-arrow-up-right"></i>
-                </button>
-              </div>
-            </div>
-
-            <!-- Email -->
-
-            <div class="col-md-6 col-lg-4">
-              <div class="contact-method-card email-card">
-                <div class="contact-card-glow"></div>
-
-                <div class="contact-icon-box email-icon">
-                  <i class="bi bi-envelope-at"></i>
-                </div>
-
-                <h3>Email</h3>
-
-                <p>Kirimkan pertanyaan atau informasi melalui email kami.</p>
-
-                <span class="contact-display" id="emailDisplay">
-                  Memuat kontak...
-                </span>
-
-                <a
-                  href="#"
-                  class="contact-action-btn email-btn"
-                  id="emailButton"
-                >
-                  Kirim Email
-
-                  <i class="bi bi-arrow-up-right"></i>
-                </a>
-              </div>
-            </div>
-
-            <!-- Instagram -->
-
-            <div class="col-md-6 col-lg-4">
-              <div class="contact-method-card instagram-card">
-                <div class="contact-card-glow"></div>
-
-                <div class="contact-icon-box instagram-icon">
-                  <i class="bi bi-instagram"></i>
-                </div>
-
-                <h3>Instagram</h3>
-
-                <p>
-                  Ikuti informasi dan aktivitas terbaru kami melalui Instagram.
-                </p>
-
-                <span class="contact-display" id="instagramDisplay">
-                  Memuat kontak...
-                </span>
-
-                <a
-                  href="#"
-                  class="contact-action-btn instagram-btn"
-                  id="instagramButton"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Buka Instagram
-
-                  <i class="bi bi-arrow-up-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
+      <section class="contact-method-section" id="contactMethods"><div class="container">
+        <div class="section-heading text-center"><span>PILIH CARA MENGHUBUNGI</span><h2>Kami Siap Membantu Anda</h2><p>Pilih salah satu platform di bawah ini.</p></div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-6 col-lg-4"><div class="contact-method-card whatsapp-card"><div class="contact-card-glow"></div><div class="contact-icon-box whatsapp-icon"><i class="bi bi-whatsapp"></i></div><h3>WhatsApp</h3><p>Hubungi kami langsung melalui WhatsApp untuk komunikasi yang lebih cepat.</p><span class="contact-display" id="whatsappDisplay">Memuat kontak...</span><button class="contact-action-btn whatsapp-btn" id="whatsappButton" type="button">Chat WhatsApp <i class="bi bi-arrow-up-right"></i></button></div></div>
+          <div class="col-md-6 col-lg-4"><div class="contact-method-card email-card"><div class="contact-card-glow"></div><div class="contact-icon-box email-icon"><i class="bi bi-envelope-at"></i></div><h3>Email</h3><p>Kirimkan pertanyaan atau informasi melalui email kami.</p><span class="contact-display" id="emailDisplay">Memuat kontak...</span><a href="#" class="contact-action-btn email-btn" id="emailButton">Kirim Email <i class="bi bi-arrow-up-right"></i></a></div></div>
+          <div class="col-md-6 col-lg-4"><div class="contact-method-card instagram-card"><div class="contact-card-glow"></div><div class="contact-icon-box instagram-icon"><i class="bi bi-instagram"></i></div><h3>Instagram</h3><p>Ikuti informasi dan aktivitas terbaru kami melalui Instagram.</p><span class="contact-display" id="instagramDisplay">Memuat kontak...</span><a href="#" class="contact-action-btn instagram-btn" id="instagramButton" target="_blank" rel="noopener noreferrer">Buka Instagram <i class="bi bi-arrow-up-right"></i></a></div></div>
         </div>
-      </section>
+      </div></section>
 
-      <!-- =====================================================
-             FORM + INFORMATION
-        ====================================================== -->
+      <section class="contact-form-section" id="contactFormSection"><div class="container"><div class="contact-form-wrapper">
+        <div class="contact-info-side"><div class="contact-info-content"><span class="contact-eyebrow"><i class="bi bi-lightning-charge"></i> KIRIM PESAN</span><h2>Ada yang ingin <span>ditanyakan?</span></h2><p>Isi formulir di samping. Pesan Anda akan diarahkan langsung ke WhatsApp kami.</p><div class="contact-benefit-list"><div class="contact-benefit"><div><i class="bi bi-check-lg"></i></div><span>Pesan langsung ke WhatsApp</span></div><div class="contact-benefit"><div><i class="bi bi-check-lg"></i></div><span>Tidak memerlukan database</span></div><div class="contact-benefit"><div><i class="bi bi-check-lg"></i></div><span>Cepat dan mudah digunakan</span></div></div><div class="contact-decoration"><i class="bi bi-chat-dots-fill"></i></div></div></div>
+        <div class="contact-form-side"><form id="contactForm" class="modern-contact-form">
+          <div class="form-group-modern"><label for="contactName"><i class="bi bi-person"></i> Nama Lengkap</label><input type="text" id="contactName" class="form-control" placeholder="Masukkan nama Anda" required /></div>
+          <div class="form-group-modern"><label for="contactEmail"><i class="bi bi-envelope"></i> Email</label><input type="email" id="contactEmail" class="form-control" placeholder="email@contoh.com" required /></div>
+          <div class="form-group-modern"><label for="contactSubject"><i class="bi bi-bookmark"></i> Subjek</label><select id="contactSubject" class="form-select" required><option value="">Pilih subjek pesan</option><option value="Pertanyaan Umum">Pertanyaan Umum</option><option value="Informasi Cleaning Services">Informasi Cleaning Services</option><option value="Panduan dan SOP">Panduan dan SOP</option><option value="Video Tutorial">Video Tutorial</option><option value="Kerja Sama">Kerja Sama</option><option value="Saran dan Masukan">Saran dan Masukan</option></select></div>
+          <div class="form-group-modern"><label for="contactMessage"><i class="bi bi-chat-square-text"></i> Pesan</label><textarea id="contactMessage" class="form-control" rows="6" placeholder="Tuliskan pesan Anda di sini..." required></textarea></div>
+          <button type="submit" class="submit-contact-btn"><span>Kirim Pesan ke WhatsApp</span><i class="bi bi-send-fill"></i></button><p class="form-note"><i class="bi bi-shield-check"></i> Pesan akan dibuka melalui WhatsApp.</p>
+        </form></div>
+      </div></div></section>
 
-      <section class="contact-form-section" id="contactFormSection">
-        <div class="container">
-          <div class="contact-form-wrapper">
-            <!-- Left Information -->
-
-            <div class="contact-info-side">
-              <div class="contact-info-content">
-                <span class="contact-eyebrow">
-                  <i class="bi bi-lightning-charge"></i>
-
-                  KIRIM PESAN
-                </span>
-
-                <h2>
-                  Ada yang ingin
-                  <span>ditanyakan?</span>
-                </h2>
-
-                <p>
-                  Isi formulir di samping. Pesan Anda akan diarahkan langsung ke
-                  WhatsApp kami.
-                </p>
-
-                <div class="contact-benefit-list">
-                  <div class="contact-benefit">
-                    <div>
-                      <i class="bi bi-check-lg"></i>
-                    </div>
-
-                    <span> Pesan langsung ke WhatsApp </span>
-                  </div>
-
-                  <div class="contact-benefit">
-                    <div>
-                      <i class="bi bi-check-lg"></i>
-                    </div>
-
-                    <span> Tidak memerlukan database </span>
-                  </div>
-
-                  <div class="contact-benefit">
-                    <div>
-                      <i class="bi bi-check-lg"></i>
-                    </div>
-
-                    <span> Cepat dan mudah digunakan </span>
-                  </div>
-                </div>
-
-                <div class="contact-decoration">
-                  <i class="bi bi-chat-dots-fill"></i>
-                </div>
-              </div>
-            </div>
-
-            <!-- Form -->
-
-            <div class="contact-form-side">
-              <form id="contactForm" class="modern-contact-form">
-                <!-- Name -->
-
-                <div class="form-group-modern">
-                  <label for="contactName">
-                    <i class="bi bi-person"></i>
-
-                    Nama Lengkap
-                  </label>
-
-                  <input
-                    type="text"
-                    id="contactName"
-                    class="form-control"
-                    placeholder="Masukkan nama Anda"
-                    required
-                  />
-                </div>
-
-                <!-- Email -->
-
-                <div class="form-group-modern">
-                  <label for="contactEmail">
-                    <i class="bi bi-envelope"></i>
-
-                    Email
-                  </label>
-
-                  <input
-                    type="email"
-                    id="contactEmail"
-                    class="form-control"
-                    placeholder="email@contoh.com"
-                    required
-                  />
-                </div>
-
-                <!-- Subject -->
-
-                <div class="form-group-modern">
-                  <label for="contactSubject">
-                    <i class="bi bi-bookmark"></i>
-
-                    Subjek
-                  </label>
-
-                  <select id="contactSubject" class="form-select" required>
-                    <option value="">Pilih subjek pesan</option>
-
-                    <option value="Pertanyaan Umum">Pertanyaan Umum</option>
-
-                    <option value="Informasi Cleaning Services">
-                      Informasi Cleaning Services
-                    </option>
-
-                    <option value="Panduan dan SOP">Panduan dan SOP</option>
-
-                    <option value="Video Tutorial">Video Tutorial</option>
-
-                    <option value="Kerja Sama">Kerja Sama</option>
-
-                    <option value="Saran dan Masukan">Saran dan Masukan</option>
-                  </select>
-                </div>
-
-                <!-- Message -->
-
-                <div class="form-group-modern">
-                  <label for="contactMessage">
-                    <i class="bi bi-chat-square-text"></i>
-
-                    Pesan
-                  </label>
-
-                  <textarea
-                    id="contactMessage"
-                    class="form-control"
-                    rows="6"
-                    placeholder="Tuliskan pesan Anda di sini..."
-                    required
-                  ></textarea>
-                </div>
-
-                <!-- Submit -->
-
-                <button type="submit" class="submit-contact-btn">
-                  <span> Kirim Pesan ke WhatsApp </span>
-
-                  <i class="bi bi-send-fill"></i>
-                </button>
-
-                <p class="form-note">
-                  <i class="bi bi-shield-check"></i>
-
-                  Pesan akan dibuka melalui WhatsApp.
-                </p>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- =====================================================
-             SOCIAL CTA
-        ====================================================== -->
-
-      <section class="social-section" id="socialSection">
-        <div class="container">
-          <div class="social-cta">
-            <div class="social-cta-content">
-              <span class="eyebrow">
-                <i class="bi bi-heart-fill"></i>
-
-                FOLLOW US
-              </span>
-
-              <h2>Tetap Terhubung Dengan SI-CS J4</h2>
-
-              <p>
-                Ikuti kami untuk mendapatkan informasi, panduan, dan pembaruan
-                terbaru.
-              </p>
-
-              <div class="social-buttons">
-                <a
-                  href="#"
-                  id="socialWhatsapp"
-                  class="social-circle social-whatsapp"
-                  target="_blank"
-                  aria-label="WhatsApp"
-                >
-                  <i class="bi bi-whatsapp"></i>
-                </a>
-
-                <a
-                  href="#"
-                  id="socialEmail"
-                  class="social-circle social-email"
-                  aria-label="Email"
-                >
-                  <i class="bi bi-envelope-fill"></i>
-                </a>
-
-                <a
-                  href="#"
-                  id="socialInstagram"
-                  class="social-circle social-instagram"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                >
-                  <i class="bi bi-instagram"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section class="social-section" id="socialSection"><div class="container"><div class="social-cta"><div class="social-cta-content"><span class="eyebrow"><i class="bi bi-heart-fill"></i> FOLLOW US</span><h2>Tetap Terhubung Dengan SI-CS J4</h2><p>Ikuti kami untuk mendapatkan informasi, panduan, dan pembaruan terbaru.</p><div class="social-buttons"><a href="#" id="socialWhatsapp" class="social-circle social-whatsapp" target="_blank" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a><a href="#" id="socialEmail" class="social-circle social-email" aria-label="Email"><i class="bi bi-envelope-fill"></i></a><a href="#" id="socialInstagram" class="social-circle social-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a></div></div></div></div></section>
     </main>
-
-    <!-- Footer -->
     <div id="footerMount"></div>
-
-    <!-- Back To Top -->
-
-    <button id="backToTop" class="back-to-top" aria-label="Kembali ke atas">
-      <i class="bi bi-arrow-up"></i>
-    </button>
-
-    <!-- Toast -->
-
-    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 9999">
-      <div
-        id="contactToast"
-        class="toast align-items-center border-0"
-        role="alert"
-      >
-        <div class="d-flex">
-          <div class="toast-body">
-            <i class="bi bi-check-circle-fill"></i>
-
-            Mengarahkan Anda ke WhatsApp...
-          </div>
-
-          <button
-            type="button"
-            class="btn-close me-2 m-auto"
-            data-bs-dismiss="toast"
-          ></button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bootstrap JS -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Global JS -->
-
-    <script src="assets/js/components.js"></script>
-
-    <script src="assets/js/main.js"></script>
-
-    <script src="assets/js/navbar.js"></script>
-
-    <script src="assets/js/theme.js"></script>
-
-    <script src="assets/js/animations.js"></script>
-
-    <!-- Contact JS -->
-
-    <script src="assets/js/pages/contactdev.js"></script>
+    <button id="backToTop" class="back-to-top" aria-label="Kembali ke atas"><i class="bi bi-arrow-up"></i></button>
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index:9999"><div id="contactToast" class="toast align-items-center border-0" role="alert"><div class="d-flex"><div class="toast-body"><i class="bi bi-check-circle-fill"></i> Mengarahkan Anda ke WhatsApp...</div><button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast"></button></div></div></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script><script src="assets/js/components.js"></script><script src="assets/js/main.js"></script><script src="assets/js/navbar.js"></script><script src="assets/js/theme.js"></script><script src="assets/js/animations.js"></script><script src="assets/js/pages/contactdev.js"></script>
   </body>
 </html>
