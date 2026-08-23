@@ -1,13 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
   const y = document.getElementById("currentYear");
   if (y) y.textContent = new Date().getFullYear();
+
+  // Load the shared premium Back to Top styling on every page that uses main.js.
+  if (!document.querySelector('link[href="assets/css/back-to-top.css"]')) {
+    const styleLink = document.createElement("link");
+    styleLink.rel = "stylesheet";
+    styleLink.href = "assets/css/back-to-top.css";
+    document.head.appendChild(styleLink);
+  }
+
   const top = document.getElementById("backToTop");
   window.addEventListener("scroll", () => {
     if (top) top.classList.toggle("show", scrollY > 400);
-  });
+  }, { passive: true });
+
   top?.addEventListener("click", () =>
     scrollTo({ top: 0, behavior: "smooth" }),
   );
+
   const form = document.getElementById("contactForm");
   form?.addEventListener("submit", (e) => {
     e.preventDefault();
