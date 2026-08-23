@@ -18,8 +18,17 @@ function loadFooterStyles(){
   link.dataset.footerStyle='true';
   document.head.appendChild(link);
 }
+function loadThemeAuditStyles(){
+  if(document.querySelector('link[data-theme-audit-style]')) return;
+  const link=document.createElement('link');
+  link.rel='stylesheet';
+  link.href='assets/css/final-theme-audit.css';
+  link.dataset.themeAuditStyle='true';
+  document.head.appendChild(link);
+}
 function mountComponents() {
   loadFooterStyles();
+  loadThemeAuditStyles();
   const nav = document.getElementById("navbarMount");
   if (nav)
     nav.innerHTML = `<div class="navbar-wrap"><nav class="navbar navbar-expand-lg custom-navbar px-3 py-2"><a class="navbar-brand" href="index.html"><span class="brand-icon"><i class="bi bi-stars"></i></span>SI-CS J4</a><button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"><i class="bi bi-list"></i></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav mx-auto">${navItems.map(([url, label]) => `<li class="nav-item"><a class="nav-link ${currentPage === url ? "active" : ""}" href="${url}">${label}</a></li>`).join("")}</ul><button class="theme-btn" id="themeToggle" title="Ubah tema"><i class="bi bi-moon-stars"></i></button></div></nav></div>`;
