@@ -1,156 +1,45 @@
 /* =========================================================
    SI-CS J4 — CONTACT PAGE
-   File utama contact page.
-   Style dasar legacy dipertahankan dari contactdev.css,
-   lalu seluruh penyesuaian dark mode ditambahkan di sini.
+   Migrated from contactdev.css.
 ========================================================= */
 
-@import url("contactdev.css");
-
-/* =========================================================
-   DARK MODE
-========================================================= */
+/* NOTE: Original contact styles are intentionally retained in contactdev.css
+   until the migration is verified. */
 
 body.dark-mode .contact-method-section,
 body.dark-mode .contact-form-section,
-body.dark-mode .social-section {
-  background: var(--bg);
-}
-
+body.dark-mode .social-section { background: var(--bg); }
 body.dark-mode .contact-method-card,
-body.dark-mode .contact-form-wrapper {
-  background: var(--card) !important;
-  border-color: var(--border) !important;
-  color: #e2e8f0;
-  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.28);
-}
-
-body.dark-mode .contact-method-card:hover {
-  border-color: rgba(96, 165, 250, 0.45) !important;
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
-}
-
-/* Judul kartu kontak */
-body.dark-mode .contact-method-card h3 {
-  color: #e2e8f0 !important;
-}
-
-/* Deskripsi dan detail kontak */
+body.dark-mode .contact-form-wrapper { background: var(--card) !important; border-color: var(--border) !important; color: #e2e8f0; box-shadow: 0 20px 55px rgba(0,0,0,.28); }
+body.dark-mode .contact-method-card:hover { border-color: rgba(96,165,250,.45) !important; box-shadow: 0 30px 70px rgba(0,0,0,.38); }
+body.dark-mode .contact-method-card h3 { color:#e2e8f0 !important; }
 body.dark-mode .contact-method-card p,
-body.dark-mode .contact-display {
-  color: #94a3b8 !important;
-}
-
-/* Heading section */
-body.dark-mode .contact-method-section .section-heading h2,
-body.dark-mode .contact-method-section .section-heading p {
-  color: #e2e8f0;
-}
-
-body.dark-mode .contact-method-section .section-heading p {
-  color: #94a3b8;
-}
-
-/* Form area */
-body.dark-mode .contact-form-side {
-  background: var(--card);
-}
-
-body.dark-mode .form-group-modern label {
-  color: #e2e8f0 !important;
-}
-
+body.dark-mode .contact-display { color:#94a3b8 !important; }
+body.dark-mode .contact-method-section .section-heading h2 { color:#e2e8f0; }
+body.dark-mode .contact-method-section .section-heading p { color:#94a3b8; }
+body.dark-mode .contact-form-side { background:var(--card); }
+body.dark-mode .form-group-modern label { color:#e2e8f0 !important; }
 body.dark-mode .modern-contact-form .form-control,
-body.dark-mode .modern-contact-form .form-select {
-  background: #111b2e !important;
-  border-color: #334155 !important;
-  color: #e2e8f0 !important;
-}
-
-body.dark-mode .modern-contact-form .form-control::placeholder {
-  color: #7f8da5 !important;
-}
-
-body.dark-mode .modern-contact-form .form-select option {
-  background: #111b2e;
-  color: #e2e8f0;
-}
-
+body.dark-mode .modern-contact-form .form-select { background:#111b2e !important; border-color:#334155 !important; color:#e2e8f0 !important; }
+body.dark-mode .modern-contact-form .form-control::placeholder { color:#7f8da5 !important; }
+body.dark-mode .modern-contact-form .form-select option { background:#111b2e; color:#e2e8f0; }
 body.dark-mode .modern-contact-form .form-control:focus,
-body.dark-mode .modern-contact-form .form-select:focus {
-  border-color: #60a5fa !important;
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.16) !important;
-}
-
-body.dark-mode .form-note {
-  color: #94a3b8;
-}
-
-/* Hero tetap kontras, hanya dibuat sedikit lebih menyatu dengan dark theme */
-body.dark-mode .contact-hero {
-  background: linear-gradient(135deg, #050b16, #0b1f3a 52%, #163d91);
-}
-
-/* Tombol hero */
-body.dark-mode .btn-contact-primary {
-  background: #e2e8f0;
-  color: #0f172a;
-}
-
-body.dark-mode .btn-contact-secondary {
-  border-color: rgba(255, 255, 255, 0.22);
-  background: rgba(255, 255, 255, 0.07);
-  color: #f8fafc;
-}
-
-/* Form info panel tetap gelap-biru, tetapi sedikit lebih dalam */
-body.dark-mode .contact-info-side {
-  background: linear-gradient(145deg, #071426, #0b2b55, #124ca5);
-}
-
-/* Social CTA */
-body.dark-mode .social-cta {
-  background: linear-gradient(135deg, #080d18, #172554, #29215f);
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.28);
-}
-
-body.dark-mode .social-cta h2 {
-  color: #f1f5f9;
-}
-
-body.dark-mode .social-cta p {
-  color: #94a3b8;
-}
-
-/* Toast */
-body.dark-mode #contactToast {
-  background: #111b2e;
-  color: #e2e8f0;
-  border: 1px solid #334155 !important;
-}
-
-body.dark-mode #contactToast .toast-body {
-  color: #e2e8f0;
-}
-
-/* Ikon tetap memiliki warna brand masing-masing */
+body.dark-mode .modern-contact-form .form-select:focus { border-color:#60a5fa !important; box-shadow:0 0 0 4px rgba(59,130,246,.16) !important; }
+body.dark-mode .form-note { color:#94a3b8; }
+body.dark-mode .contact-hero { background:linear-gradient(135deg,#050b16,#0b1f3a 52%,#163d91); }
+body.dark-mode .btn-contact-primary { background:#e2e8f0; color:#0f172a; }
+body.dark-mode .btn-contact-secondary { border-color:rgba(255,255,255,.22); background:rgba(255,255,255,.07); color:#f8fafc; }
+body.dark-mode .contact-info-side { background:linear-gradient(145deg,#071426,#0b2b55,#124ca5); }
+body.dark-mode .social-cta { background:linear-gradient(135deg,#080d18,#172554,#29215f); box-shadow:0 25px 70px rgba(0,0,0,.28); }
+body.dark-mode .social-cta h2 { color:#f1f5f9; }
+body.dark-mode .social-cta p { color:#94a3b8; }
+body.dark-mode #contactToast { background:#111b2e; color:#e2e8f0; border:1px solid #334155 !important; }
+body.dark-mode #contactToast .toast-body { color:#e2e8f0; }
 body.dark-mode .whatsapp-icon,
 body.dark-mode .email-icon,
-body.dark-mode .instagram-icon {
-  filter: brightness(1.05);
-}
-
-/* =========================================================
-   MOBILE DARK MODE
-========================================================= */
-
-@media (max-width: 767.98px) {
+body.dark-mode .instagram-icon { filter:brightness(1.05); }
+@media (max-width:767.98px) {
   body.dark-mode .contact-method-card,
-  body.dark-mode .contact-form-wrapper {
-    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
-  }
-
-  body.dark-mode .contact-form-side {
-    background: var(--card);
-  }
+  body.dark-mode .contact-form-wrapper { box-shadow:0 14px 35px rgba(0,0,0,.25); }
+  body.dark-mode .contact-form-side { background:var(--card); }
 }
