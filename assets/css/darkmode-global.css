@@ -10,7 +10,7 @@ body.dark-mode .equipment-card,
 body.dark-mode .stat-card,
 body.dark-mode .info-card {
   background: var(--card) !important;
-  color: var(--dark);
+  color: #e2e8f0;
   border-color: var(--border) !important;
 }
 
@@ -20,6 +20,7 @@ body.dark-mode .video-card .video-info {
   background: transparent;
 }
 
+/* Judul card: putih lembut agar nyaman dibaca di dark mode */
 body.dark-mode .feature-card h1,
 body.dark-mode .feature-card h2,
 body.dark-mode .feature-card h3,
@@ -61,30 +62,31 @@ body.dark-mode .info-card h2,
 body.dark-mode .info-card h3,
 body.dark-mode .info-card h4,
 body.dark-mode .info-card h5,
-body.dark-mode .info-card h6 {
-  color: var(--dark) !important;
+body.dark-mode .info-card h6,
+body.dark-mode .card-title {
+  color: #e2e8f0 !important;
 }
 
+/* Isi card: abu-abu lembut */
 body.dark-mode .feature-card p,
 body.dark-mode .guide-card p,
 body.dark-mode .video-card p,
 body.dark-mode .staff-card p,
 body.dark-mode .equipment-card p,
 body.dark-mode .stat-card p,
-body.dark-mode .info-card p {
-  color: var(--muted) !important;
+body.dark-mode .info-card p,
+body.dark-mode .card-text {
+  color: #94a3b8 !important;
 }
 
-body.dark-mode .card-title,
-body.dark-mode .card-text,
 body.dark-mode .text-dark,
 body.dark-mode .text-body {
-  color: var(--dark) !important;
+  color: #e2e8f0 !important;
 }
 
 body.dark-mode .text-secondary,
 body.dark-mode .text-muted {
-  color: var(--muted) !important;
+  color: #94a3b8 !important;
 }
 
 body.dark-mode .feature-card a:not(.btn),
