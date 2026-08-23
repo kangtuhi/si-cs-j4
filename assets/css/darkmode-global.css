@@ -1,0 +1,83 @@
+/* =========================================
+   GLOBAL DARK MODE - CARD TYPOGRAPHY
+   Menyamakan warna judul/teks seluruh card
+========================================= */
+
+body.dark-mode .feature-card h1,
+body.dark-mode .feature-card h2,
+body.dark-mode .feature-card h3,
+body.dark-mode .feature-card h4,
+body.dark-mode .feature-card h5,
+body.dark-mode .feature-card h6,
+body.dark-mode .guide-card h1,
+body.dark-mode .guide-card h2,
+body.dark-mode .guide-card h3,
+body.dark-mode .guide-card h4,
+body.dark-mode .guide-card h5,
+body.dark-mode .guide-card h6,
+body.dark-mode .video-card h1,
+body.dark-mode .video-card h2,
+body.dark-mode .video-card h3,
+body.dark-mode .video-card h4,
+body.dark-mode .video-card h5,
+body.dark-mode .video-card h6,
+body.dark-mode .staff-card h1,
+body.dark-mode .staff-card h2,
+body.dark-mode .staff-card h3,
+body.dark-mode .staff-card h4,
+body.dark-mode .staff-card h5,
+body.dark-mode .staff-card h6,
+body.dark-mode .equipment-card h1,
+body.dark-mode .equipment-card h2,
+body.dark-mode .equipment-card h3,
+body.dark-mode .equipment-card h4,
+body.dark-mode .equipment-card h5,
+body.dark-mode .equipment-card h6,
+body.dark-mode .stat-card h1,
+body.dark-mode .stat-card h2,
+body.dark-mode .stat-card h3,
+body.dark-mode .stat-card h4,
+body.dark-mode .stat-card h5,
+body.dark-mode .stat-card h6,
+body.dark-mode .info-card h1,
+body.dark-mode .info-card h2,
+body.dark-mode .info-card h3,
+body.dark-mode .info-card h4,
+body.dark-mode .info-card h5,
+body.dark-mode .info-card h6 {
+  color: var(--dark) !important;
+}
+
+body.dark-mode .feature-card p,
+body.dark-mode .guide-card p,
+body.dark-mode .video-card p,
+body.dark-mode .staff-card p,
+body.dark-mode .equipment-card p,
+body.dark-mode .stat-card p,
+body.dark-mode .info-card p {
+  color: var(--muted) !important;
+}
+
+/* Elemen Bootstrap yang sering memaksa warna gelap */
+body.dark-mode .card-title,
+body.dark-mode .card-text,
+body.dark-mode .text-dark,
+body.dark-mode .text-body {
+  color: var(--dark) !important;
+}
+
+body.dark-mode .text-secondary,
+body.dark-mode .text-muted {
+  color: var(--muted) !important;
+}
+
+/* Link di dalam card */
+body.dark-mode .feature-card a:not(.btn),
+body.dark-mode .guide-card a:not(.btn),
+body.dark-mode .video-card a:not(.btn),
+body.dark-mode .staff-card a:not(.btn),
+body.dark-mode .equipment-card a:not(.btn),
+body.dark-mode .stat-card a:not(.btn),
+body.dark-mode .info-card a:not(.btn) {
+  color: #93c5fd;
+}
