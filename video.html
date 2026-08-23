@@ -20,39 +20,84 @@
   </head>
   <body>
     <div id="navbarMount"></div>
+
     <main>
       <section class="page-header">
         <div class="container">
           <span class="eyebrow">VIDEO LEARNING CENTER</span>
           <h1>Video Panduan</h1>
-          <p>Pelajari teknik dan prosedur cleaning melalui video YouTube.</p>
+          <p>
+            Pelajari teknik dan prosedur cleaning melalui video pembelajaran.
+          </p>
         </div>
       </section>
+
       <section class="py-5">
         <div class="container">
+          <!-- Filter Panel -->
           <div class="filter-panel mb-4">
-            <div class="input-group search-box">
-              <span class="input-group-text"><i class="bi bi-search"></i></span
-              ><input
-                id="videoSearch"
-                class="form-control"
-                placeholder="Cari video..."
-              />
+            <div class="filter-header">
+              <div>
+                <span class="filter-label">
+                  <i class="bi bi-play-circle-fill"></i>
+                  TEMUKAN VIDEO
+                </span>
+                <h4>Cari video sesuai kebutuhanmu</h4>
+              </div>
+
+              <span class="guide-count" id="videoCount"></span>
             </div>
-            <div id="videoFilters" class="filter-chips mt-3"></div>
+
+            <div class="search-box">
+              <i class="bi bi-search search-icon"></i>
+
+              <input
+                id="videoSearch"
+                type="search"
+                placeholder="Cari video cleaning..."
+                autocomplete="off"
+              />
+
+              <button
+                type="button"
+                class="clear-search"
+                id="clearVideoSearch"
+                aria-label="Hapus pencarian"
+              >
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </div>
+
+            <div class="filter-divider"></div>
+
+            <div class="filter-section">
+              <span class="filter-title">
+                <i class="bi bi-grid-3x3-gap"></i>
+                Kategori
+              </span>
+
+              <div id="videoFilters" class="filter-chips"></div>
+            </div>
           </div>
+          <!-- akhir filter panel -->
+
           <div class="row g-4" id="videosContainer"></div>
+
           <div id="emptyVideos" class="empty-state d-none">
-            <i class="bi bi-camera-video"></i>
+            <i class="bi bi-search"></i>
             <h4>Video tidak ditemukan</h4>
+            <p>Coba kata kunci atau kategori lain.</p>
           </div>
         </div>
       </section>
     </main>
+
     <div id="footerMount"></div>
+
     <button id="backToTop" class="back-to-top">
       <i class="bi bi-arrow-up"></i>
     </button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/data/videos-data.js"></script>
     <script src="assets/js/components.js"></script>
