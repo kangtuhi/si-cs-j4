@@ -1,8 +1,55 @@
 // =========================================================
 // SI-CS J4 — KOMPONEN GLOBAL
-// Navbar + footer + favicon + auth UI
+// Navbar + footer + favicon + auth UI + route protection
 // =========================================================
 const currentPage = location.pathname.split("/").pop() || "index.html";
+const AUTH_KEY = "sicsJ4DemoSession";
+const USER_KEY = "sicsJ4DemoUser";
+const AWAY_TIMEOUT = 60000;
+
+function isAuthenticated() {
+  return sessionStorage.getItem(AUTH_KEY) === "authenticated";
+}
+function getCurrentUser() {
+  try { return JSON.parse(sessionStorage.getItem(USER_KEY) || "null"); }
+  catch { return null; }
+}
+function clearDemoAuth() {
+  sessionStorage.removeItem(AUTH_KEY);
+  sessionStorage.removeItem(USER_KEY);
+}
+function requireAuth() {
+  if (!isAuthenticated()) {
+    const target = currentPage && currentPage !== "index.html" ? currentPage : "";
+    window.location.replace(`login.html?redirect=${encodeURIComponent(target)}`);
+    return false;
+  }
+  return true;
+}
+function watchAwaySession() {
+  if (window.__sicsAwayWatcher) return;
+  window.__sicsAwayWatcher = true;
+  let awayTimer = null;
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") {
+      clearTimeout(awayTimer);
+      awayTimer = window.setTimeout(() => {
+        clearDemoAuth();
+        window.location.replace("login.html?expired=1");
+      }, AWAY_TIMEOUT);
+    } else {
+      clearTimeout(awayTimer);
+      awayTimer = null;
+      if (!isAuthenticated()) window.location.replace("login.html?expired=1");
+    }
+  });
+}
+
+if (!requireAuth()) {
+  throw new Error("SICS_AUTH_REQUIRED");
+}
+watchAwaySession();
+
 const navItems = [
   ["/", "Beranda", "index.html"], ["panduan.html", "Panduan", "panduan.html"],
   ["video.html", "Video", "video.html"], ["informasi.html", "Informasi", "informasi.html"],
@@ -11,18 +58,8 @@ const navItems = [
   ["kontak.html", "Kontak", "kontak.html"]
 ];
 
-const AUTH_KEY = "sicsJ4DemoSession";
-const USER_KEY = "sicsJ4DemoUser";
-function isAuthenticated() {
-  return sessionStorage.getItem(AUTH_KEY) === "authenticated" || localStorage.getItem(AUTH_KEY) === "authenticated";
-}
-function getCurrentUser() {
-  try { return JSON.parse(sessionStorage.getItem(USER_KEY) || localStorage.getItem(USER_KEY) || "null"); }
-  catch { return null; }
-}
 function logoutDemo() {
-  sessionStorage.removeItem(AUTH_KEY); sessionStorage.removeItem(USER_KEY);
-  localStorage.removeItem(AUTH_KEY); localStorage.removeItem(USER_KEY);
+  clearDemoAuth();
   location.href = "login.html?logout=1";
 }
 
@@ -60,8 +97,7 @@ function mountComponents() {
     const authToggle = nav.querySelector(".auth-user-link");
     const authDropdown = nav.querySelector(".auth-dropdown");
     authToggle?.addEventListener("click", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
+      event.preventDefault(); event.stopPropagation();
       const open = authItem.classList.toggle("auth-open");
       authToggle.setAttribute("aria-expanded", String(open));
       authDropdown?.setAttribute("aria-hidden", String(!open));
@@ -73,12 +109,12 @@ function mountComponents() {
       authItem.classList.remove("auth-open");
       authToggle?.setAttribute("aria-expanded", "false");
       authDropdown?.setAttribute("aria-hidden", "true");
-    }, { once: false });
+    });
   }
 
   const footer = document.getElementById("footerMount");
   if (footer) {
-    footer.innerHTML = `<footer class="site-footer"><div class="container"><div class="row g-4"><div class="col-md-6"><div class="footer-brand"><a class="footer-brand-link" href="/" aria-label="Kembali ke Beranda SI-CS J4"><span class="footer-brand-logo"><img src="assets/img/logo-sics-j4-transparent.png" alt="Logo SI-CS J4"></span><span class="footer-brand-title">SI-CS J4</span></a><p class="footer-brand-text">Sistem Informasi Cleaning Services untuk panduan, informasi, video, jadwal, dan pengelolaan konten.</p></div><div class="footer-socials"><a class="footer-social" href="https://instagram.com/tubagusmuhammadtuhi" target="_blank" rel="noopener" aria-label="Instagram SI-CS J4"><i class="bi bi-instagram"></i></a><a class="footer-social" href="kontak.html" aria-label="Kontak SI-CS J4"><i class="bi bi-envelope"></i></a></div></div><div class="col-6 col-md-3"><h6>Menu</h6><div class="footer-links"><p><a href="panduan.html"><i class="bi bi-chevron-right"></i>Panduan</a></p><p><a href="video.html"><i class="bi bi-chevron-right"></i>Video</a></p><p><a href="alat-bahan.html"><i class="bi bi-chevron-right"></i>Alat & Bahan</a></p><p><a href="jadwal.html"><i class="bi bi-chevron-right"></i>Jadwal</a></p></div></div><div class="col-6 col-md-3"><h6>Informasi</h6><div class="footer-links"><p><a href="informasi.html"><i class="bi bi-chevron-right"></i>SOP & K3</a></p><p><a href="petugas.html"><i class="bi bi-chevron-right"></i>Petugas</a></p><p><a href="kontak.html"><i class="bi bi-chevron-right"></i>Kontak</a></p></div></div></div><hr><div class="footer-bottom"><p class="small footer-credit">© <span id="currentYear"></span> SI-CS J4. Built with ❤️ By <a href="https://instagram.com/tubagusmuhammadtuhi" target="_blank" rel="noopener">Tubagus Muhammad Tuhi</a>.</p><a class="footer-top" href="#">Kembali ke atas <i class="bi bi-arrow-up"></i></a></div></div></footer>`;
+    footer.innerHTML = `<footer class="site-footer"><div class="container"><div class="row g-4"><div class="col-md-6"><div class="footer-brand"><a class="footer-brand-link" href="/" aria-label="Kembali ke Beranda SI-CS J4"><span class="footer-brand-logo"><img src="assets/img/logo-sics-j4-transparent.png" alt="Logo SI-CS J4"></span><span class="footer-brand-title">SI-CS J4</span></a><p class="footer-brand-text">Sistem Informasi Cleaning Services untuk panduan, informasi, video, jadwal, dan pengelolaan konten.</p></div><div class="footer-socials"><a class="footer-social" href="https://instagram.com/tubagusmuhammadtuhi" target="_blank" rel="noopener" aria-label="Instagram SI-CS J4"><i class="bi bi-instagram"></i></a><a class="footer-social" href="kontak.html" aria-label="Kontak SI-CS J4"><i class="bi bi-envelope"></i></a></div></div><div class="col-6 col-md-3"><h6>Menu</h6><div class="footer-links"><p><a href="panduan.html"><i class="bi bi-chevron-right"></i>Panduan</a></p><p><a href="video.html"><i class="bi bi-chevron-right"></i>Video</a></p><p><a href="alat-bahan.html"><i class="bi bi-chevron-right"></i>Alat & Bahan</a></p><p><a href="jadwal.html"><i class="bi bi-chevron-right"></i>Jadwal</a></p></div></div><div class="col-6 col-md-3"><h6>Informasi</h6><div class="footer-links"><p><a href="informasi.html"><i class="bi bi-chevron-right"></i>SOP & K3</a></p><p><a href="petugas.html"><i class="bi bi-chevron-right"></i>Petugas</a></p><p><a href="kontak.html" aria-label="Kontak SI-CS J4"><i class="bi bi-chevron-right"></i>Kontak</a></p></div></div></div><hr><div class="footer-bottom"><p class="small footer-credit">© <span id="currentYear"></span> SI-CS J4. Built with ❤️ By <a href="https://instagram.com/tubagusmuhammadtuhi" target="_blank" rel="noopener">Tubagus Muhammad Tuhi</a>.</p><a class="footer-top" href="#">Kembali ke atas <i class="bi bi-arrow-up"></i></a></div></div></footer>`;
   }
   document.getElementById("currentYear")?.replaceChildren(document.createTextNode(String(new Date().getFullYear())));
 }
