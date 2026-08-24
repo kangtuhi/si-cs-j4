@@ -51,11 +51,29 @@ function mountComponents() {
     const loggedIn = isAuthenticated();
     const user = getCurrentUser();
     const authUi = loggedIn
-      ? `<li class="nav-item dropdown auth-nav-item"><a class="nav-link auth-user-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><span class="auth-avatar"><i class="bi bi-person-fill"></i></span><span>${user?.name || "Administrator"}</span></a><ul class="dropdown-menu dropdown-menu-end auth-dropdown"><li><div class="auth-dropdown-head"><strong>${user?.name || "Administrator"}</strong><small>${user?.role || "Administrator"}</small></div></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item" href="dashboard.html"><i class="bi bi-grid-1x2"></i> Dashboard</a></li><li><button class="dropdown-item auth-logout" type="button"><i class="bi bi-box-arrow-right"></i> Keluar</button></li></ul></li>`
+      ? `<li class="nav-item auth-nav-item"><button class="nav-link auth-user-link" type="button" aria-expanded="false" aria-controls="authDropdown"><span class="auth-avatar"><i class="bi bi-person-fill"></i></span><span>${user?.name || "Administrator"}</span><i class="bi bi-chevron-down auth-chevron" aria-hidden="true"></i></button><ul id="authDropdown" class="auth-dropdown" aria-hidden="true"><li><div class="auth-dropdown-head"><strong>${user?.name || "Administrator"}</strong><small>${user?.role || "Administrator"}</small></div></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item" href="dashboard.html"><i class="bi bi-grid-1x2"></i> Dashboard</a></li><li><button class="dropdown-item auth-logout" type="button"><i class="bi bi-box-arrow-right"></i> Keluar</button></li></ul></li>`
       : `<li class="nav-item auth-nav-item"><a class="nav-link login-nav-link" href="login.html"><i class="bi bi-person-circle"></i> Login</a></li>`;
 
     nav.innerHTML = `<div class="navbar-wrap"><nav class="navbar navbar-expand-lg custom-navbar px-3 py-2"><a class="navbar-brand" href="/"><span class="brand-logo"><img src="assets/img/logo-sics-j4-transparent.png" alt="Logo SI-CS J4"></span><span>SI-CS J4</span></a><button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Buka menu"><i class="bi bi-list"></i></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav mx-auto">${navItems.map(([url,label,page]) => `<li class="nav-item"><a class="nav-link ${currentPage === page ? "active" : ""}" href="${url}">${label}</a></li>`).join("")}${authUi}</ul><button class="theme-btn" id="themeToggle" title="Ubah tema" type="button"><i class="bi bi-moon-stars"></i></button></div></nav></div>`;
+
+    const authItem = nav.querySelector(".auth-nav-item");
+    const authToggle = nav.querySelector(".auth-user-link");
+    const authDropdown = nav.querySelector(".auth-dropdown");
+    authToggle?.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const open = authItem.classList.toggle("auth-open");
+      authToggle.setAttribute("aria-expanded", String(open));
+      authDropdown?.setAttribute("aria-hidden", String(!open));
+    });
+    authDropdown?.addEventListener("click", (event) => event.stopPropagation());
     nav.querySelector(".auth-logout")?.addEventListener("click", logoutDemo);
+    document.addEventListener("click", () => {
+      if (!authItem?.classList.contains("auth-open")) return;
+      authItem.classList.remove("auth-open");
+      authToggle?.setAttribute("aria-expanded", "false");
+      authDropdown?.setAttribute("aria-hidden", "true");
+    }, { once: false });
   }
 
   const footer = document.getElementById("footerMount");
