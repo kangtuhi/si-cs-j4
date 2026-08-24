@@ -27,9 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
     collapse.addEventListener("hidden.bs.collapse", syncMenuState);
 
     // Close the mobile menu only after selecting a real navigation link.
-    // Dropdown toggles (including Administrator) must stay open so Bootstrap
-    // can display their submenu instead of collapsing the whole navbar.
-    collapse.querySelectorAll(".nav-link:not(.dropdown-toggle)").forEach((link) => {
+    // Administrator is a custom auth button, not a navigation link.
+    collapse.querySelectorAll(".nav-link:not(.auth-user-link)").forEach((link) => {
       link.addEventListener("click", () => {
         if (window.innerWidth <= 991 && collapse.classList.contains("show")) {
           bootstrap.Collapse.getOrCreateInstance(collapse).hide();
@@ -37,11 +36,17 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Keep clicks on the Administrator dropdown inside the mobile navbar.
-    collapse.querySelectorAll(".dropdown-toggle").forEach((toggle) => {
-      toggle.addEventListener("click", (event) => {
-        event.stopPropagation();
-      });
+    // Administrator owns its own custom dropdown. Never let its click
+    // trigger the mobile navbar collapse.
+    const authToggle = collapse.querySelector(".auth-user-link");
+    authToggle?.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+    });
+
+    const authDropdown = collapse.querySelector(".auth-dropdown");
+    authDropdown?.addEventListener("click", (event) => {
+      event.stopPropagation();
     });
 
     syncMenuState();
