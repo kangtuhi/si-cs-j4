@@ -1,45 +1,43 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Login | SI-CS J4</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="assets/css/darkmode-global.css" />
-  <link rel="stylesheet" href="assets/css/final-theme-audit.css" />
-  <link rel="stylesheet" href="assets/css/login.css" />
+  <link rel="stylesheet" href="assets/css/style.css" /><link rel="stylesheet" href="assets/css/darkmode-global.css" /><link rel="stylesheet" href="assets/css/final-theme-audit.css" /><link rel="stylesheet" href="assets/css/login.css" />
 </head>
 <body class="login-page">
-  <main class="login-shell">
-    <div class="login-glow login-glow-one"></div><div class="login-glow login-glow-two"></div>
-    <div class="login-stage">
-      <div class="login-card">
-        <div class="login-brand"><span class="login-logo"><img src="assets/img/logo-sics-j4-transparent.png" alt="Logo SI-CS J4" /></span><div><strong>SI-CS J4</strong><small>Sistem Informasi Cleaning Services</small></div></div>
-        <div class="login-heading"><span class="login-eyebrow"><i class="bi bi-shield-check"></i> SECURE ACCESS</span><h1>Selamat datang kembali.</h1><p>Masuk ke ruang kerja SI-CS J4 untuk melanjutkan aktivitas Anda.</p></div>
-        <form id="loginForm" novalidate>
-          <div class="login-field"><label for="loginUsername">Username</label><div class="login-input-wrap"><i class="bi bi-person"></i><input id="loginUsername" name="username" type="text" autocomplete="username" placeholder="Masukkan username" required /></div></div>
-          <div class="login-field"><label for="loginPassword">Password</label><div class="login-input-wrap"><i class="bi bi-lock"></i><input id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="Masukkan password" required /><button type="button" id="togglePassword" class="password-toggle" aria-label="Tampilkan password"><i class="bi bi-eye"></i></button></div></div>
-          <div class="login-options"><label class="remember"><input type="checkbox" id="rememberLogin" /> <span>Ingat saya</span></label><button type="button" class="forgot-link" id="forgotDemo">Lupa password?</button></div>
-          <div id="loginMessage" class="login-message" role="alert" aria-live="polite"></div>
-          <button class="login-submit" id="loginSubmit" type="submit"><span class="submit-label">Masuk ke Sistem <i class="bi bi-arrow-right"></i></span><span class="submit-loading"><span class="spinner-border spinner-border-sm"></span> Memverifikasi...</span></button>
-        </form>
-        <div class="login-security"><span><i class="bi bi-patch-check-fill"></i> Demo Authentication</span><span><i class="bi bi-lock-fill"></i> Protected Area</span></div>
-        <div class="login-back"><a href="/"><i class="bi bi-arrow-left"></i> Kembali ke Beranda</a><button id="loginTheme" class="login-theme" type="button" title="Ubah tema"><i class="bi bi-moon-stars"></i></button></div>
-      </div>
-      <aside class="demo-note" aria-label="Informasi akun demo">
-        <span class="pin"><i class="bi bi-pin-fill"></i></span><div class="note-tape"></div>
-        <div class="note-content"><span class="note-label"><i class="bi bi-stars"></i> PORTFOLIO DEMO</span><h2>Gunakan akun demo</h2><p>Login terbuka untuk demonstrasi. Gunakan kredensial berikut untuk mencoba dashboard SICS.</p>
-          <div class="note-credential"><span><i class="bi bi-person-fill"></i> Username</span><strong>admin</strong></div>
-          <div class="note-credential"><span><i class="bi bi-key-fill"></i> Password</span><strong>sicsj4</strong></div>
-          <button type="button" class="note-use" id="useDemoAccount"><i class="bi bi-magic"></i> Gunakan akun demo</button>
-          <small class="note-foot"><i class="bi bi-info-circle"></i> Khusus demonstrasi SICS J4</small>
-        </div>
-      </aside>
+<main class="login-shell"><div class="login-glow login-glow-one"></div><div class="login-glow login-glow-two"></div>
+  <div class="login-stage">
+    <div class="login-card">
+      <div class="login-brand"><span class="login-logo"><img src="assets/img/logo-sics-j4-transparent.png" alt="Logo SI-CS J4" /></span><div><strong>SI-CS J4</strong><small>Sistem Informasi Cleaning Services</small></div></div>
+      <div class="login-heading"><span class="login-eyebrow"><i class="bi bi-shield-check"></i> SECURE ACCESS</span><h1>Selamat datang kembali.</h1><p>Masuk ke ruang kerja SI-CS J4 untuk melanjutkan aktivitas Anda.</p></div>
+      <form id="loginForm" novalidate>
+        <div class="login-field"><label for="loginUsername">Username</label><div class="login-input-wrap"><i class="bi bi-person"></i><input id="loginUsername" name="username" type="text" autocomplete="username" placeholder="Masukkan username" required /></div></div>
+        <div class="login-field"><label for="loginPassword">Password</label><div class="login-input-wrap"><i class="bi bi-lock"></i><input id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="Masukkan password" required /><button type="button" id="togglePassword" class="password-toggle" aria-label="Tampilkan password"><i class="bi bi-eye"></i></button></div></div>
+        <div class="login-options"><label class="remember"><input type="checkbox" id="rememberLogin" /> <span>Ingat saya</span></label><button type="button" class="forgot-link" id="forgotDemo">Lupa password?</button></div>
+        <div id="loginMessage" class="login-message" role="alert" aria-live="polite"></div>
+        <button class="login-submit" id="loginSubmit" type="submit"><span class="submit-label">Masuk ke Sistem <i class="bi bi-arrow-right"></i></span><span class="submit-loading"><span class="spinner-border spinner-border-sm"></span> Memverifikasi...</span></button>
+      </form>
+      <div class="login-security"><span><i class="bi bi-patch-check-fill"></i> Demo Authentication</span><span><i class="bi bi-lock-fill"></i> Protected Area</span></div>
+      <div class="login-back"><a href="/"><i class="bi bi-arrow-left"></i> Kembali ke Beranda</a><button id="loginTheme" class="login-theme" type="button" title="Ubah tema"><i class="bi bi-moon-stars"></i></button></div>
     </div>
-    <p class="login-footer">© <span id="loginYear"></span> SI-CS J4 · Portfolio Edition</p>
-  </main>
-  <script src="assets/js/theme.js"></script><script src="assets/js/auth.js"></script><script src="assets/js/login.js"></script>
-</body>
-</html>
+    <aside class="demo-note" aria-label="Catatan akun demo">
+      <span class="pin"><i class="bi bi-pin-fill"></i></span><div class="note-tape"></div>
+      <div class="note-content">
+        <span class="note-label"><i class="bi bi-stars"></i> PORTFOLIO DEMO</span>
+        <h2>Login di sini 👇</h2>
+        <p class="note-hand">Kalau cuma mau lihat-lihat, pakai akun demo ini aja. Jangan malu-malu 😎</p>
+        <div class="note-credential"><span><i class="bi bi-person-fill"></i> Username</span><strong>admin</strong></div>
+        <div class="note-credential"><span><i class="bi bi-key-fill"></i> Password</span><strong>sicsj4</strong></div>
+        <button type="button" class="note-use" id="useDemoAccount"><i class="bi bi-magic"></i> Isi otomatis & coba</button>
+        <div class="note-doodle"><span>tinggal klik ↓</span><i class="bi bi-arrow-down-right"></i></div>
+        <small class="note-foot"><i class="bi bi-heart-fill"></i> Dibuat untuk demo portfolio SI-CS J4</small>
+      </div>
+    </aside>
+  </div>
+  <p class="login-footer">© <span id="loginYear"></span> SI-CS J4 · Portfolio Edition</p>
+</main>
+<script src="assets/js/theme.js"></script><script src="assets/js/auth.js"></script><script src="assets/js/login.js"></script>
+</body></html>
