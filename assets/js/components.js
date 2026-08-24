@@ -7,16 +7,17 @@
 const currentPage = location.pathname.split("/").pop() || "index.html";
 
 // Daftar menu utama yang ditampilkan pada navbar.
+// Beranda menggunakan root website agar index.html tidak tampil di URL.
 const navItems = [
-  ["index.html", "Beranda"],
-  ["panduan.html", "Panduan"],
-  ["video.html", "Video"],
-  ["informasi.html", "Informasi"],
-  ["alat-bahan.html", "Alat & Bahan"],
-  ["jadwal.html", "Jadwal"],
-  ["petugas.html", "Petugas"],
-  ["dashboard.html", "Dashboard"],
-  ["kontak.html", "Kontak"]
+  ["/", "Beranda", "index.html"],
+  ["panduan.html", "Panduan", "panduan.html"],
+  ["video.html", "Video", "video.html"],
+  ["informasi.html", "Informasi", "informasi.html"],
+  ["alat-bahan.html", "Alat & Bahan", "alat-bahan.html"],
+  ["jadwal.html", "Jadwal", "jadwal.html"],
+  ["petugas.html", "Petugas", "petugas.html"],
+  ["dashboard.html", "Dashboard", "dashboard.html"],
+  ["kontak.html", "Kontak", "kontak.html"]
 ];
 
 // Memuat stylesheet footer hanya satu kali.
@@ -59,7 +60,7 @@ function mountComponents() {
   // Memasang navbar global jika halaman memiliki navbarMount.
   const nav = document.getElementById("navbarMount");
   if (nav) {
-    nav.innerHTML = `<div class="navbar-wrap"><nav class="navbar navbar-expand-lg custom-navbar px-3 py-2"><a class="navbar-brand" href="index.html"><span class="brand-logo"><img src="assets/img/logo-sics-j4.jpg" alt="Logo SI-CS J4"></span><span>SI-CS J4</span></a><button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"><i class="bi bi-list"></i></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav mx-auto">${navItems.map(([url, label]) => `<li class="nav-item"><a class="nav-link ${currentPage === url ? "active" : ""}" href="${url}">${label}</a></li>`).join("")}</ul><button class="theme-btn" id="themeToggle" title="Ubah tema"><i class="bi bi-moon-stars"></i></button></div></nav></div>`;
+    nav.innerHTML = `<div class="navbar-wrap"><nav class="navbar navbar-expand-lg custom-navbar px-3 py-2"><a class="navbar-brand" href="/"><span class="brand-logo"><img src="assets/img/logo-sics-j4.jpg" alt="Logo SI-CS J4"></span><span>SI-CS J4</span></a><button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"><i class="bi bi-list"></i></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav mx-auto">${navItems.map(([url, label, page]) => `<li class="nav-item"><a class="nav-link ${currentPage === page ? "active" : ""}" href="${url}">${label}</a></li>`).join("")}</ul><button class="theme-btn" id="themeToggle" title="Ubah tema"><i class="bi bi-moon-stars"></i></button></div></nav></div>`;
   }
 
   // Memasang footer global jika halaman memiliki footerMount.
