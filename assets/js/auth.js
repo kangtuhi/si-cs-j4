@@ -1,24 +1,16 @@
 // SI-CS J4 — DEMO AUTHENTICATION
 const SICS_AUTH_KEY = "sicsJ4DemoSession";
 const SICS_USER_KEY = "sicsJ4DemoUser";
-const SICS_AUTH_TIME_KEY = "sicsJ4DemoSessionAt";
-const SICS_AUTH_TIMEOUT = 60000;
 const SICS_DEMO_CREDENTIALS = { username: "admin", password: "sicsj4" };
+const SICS_AWAY_TIMEOUT = 60000;
 
 function clearAuthSession() {
   sessionStorage.removeItem(SICS_AUTH_KEY);
   sessionStorage.removeItem(SICS_USER_KEY);
-  sessionStorage.removeItem(SICS_AUTH_TIME_KEY);
 }
 
 function isAuthenticated() {
-  if (sessionStorage.getItem(SICS_AUTH_KEY) !== "authenticated") return false;
-  const started = Number(sessionStorage.getItem(SICS_AUTH_TIME_KEY) || 0);
-  if (!started || Date.now() - started >= SICS_AUTH_TIMEOUT) {
-    clearAuthSession();
-    return false;
-  }
-  return true;
+  return sessionStorage.getItem(SICS_AUTH_KEY) === "authenticated";
 }
 
 function getCurrentUser() {
@@ -33,7 +25,6 @@ function loginDemo(username, password) {
   clearAuthSession();
   sessionStorage.setItem(SICS_AUTH_KEY, "authenticated");
   sessionStorage.setItem(SICS_USER_KEY, JSON.stringify(user));
-  sessionStorage.setItem(SICS_AUTH_TIME_KEY, String(Date.now()));
   return { success: true, user };
 }
 
@@ -56,32 +47,28 @@ function protectPage() {
 function startAuthExpiryWatcher() {
   if (window.__sicsAuthWatcherStarted || !isAuthenticated()) return;
   window.__sicsAuthWatcherStarted = true;
-  let hiddenSince = null;
-  const check = () => {
-    if (!isAuthenticated()) {
-      if (!location.pathname.endsWith("/login.html")) window.location.replace("login.html?expired=1");
-      return;
-    }
-    const started = Number(sessionStorage.getItem(SICS_AUTH_TIME_KEY) || 0);
-    window.setTimeout(check, Math.max(500, SICS_AUTH_TIMEOUT - (Date.now() - started) + 50));
-  };
+  let awayTimer = null;
   document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "hidden") { hiddenSince = Date.now(); return; }
-    if (hiddenSince && Date.now() - hiddenSince >= SICS_AUTH_TIMEOUT) {
-      clearAuthSession();
-      window.location.replace("login.html?expired=1");
-      return;
+    if (document.visibilityState === "hidden") {
+      clearTimeout(awayTimer);
+      awayTimer = window.setTimeout(() => {
+        clearAuthSession();
+        window.location.replace("login.html?expired=1");
+      }, SICS_AWAY_TIMEOUT);
+    } else {
+      clearTimeout(awayTimer);
+      awayTimer = null;
+      if (!isAuthenticated() && !location.pathname.endsWith("/login.html")) {
+        window.location.replace("login.html?expired=1");
+      }
     }
-    check();
   });
-  check();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   if (location.pathname.endsWith("/login.html")) {
     if (isAuthenticated()) startAuthExpiryWatcher();
-  } else {
-    protectPage();
-    if (isAuthenticated()) startAuthExpiryWatcher();
+  } else if (protectPage()) {
+    startAuthExpiryWatcher();
   }
 });
