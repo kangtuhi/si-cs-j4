@@ -26,12 +26,21 @@ document.addEventListener("DOMContentLoaded", () => {
     collapse.addEventListener("hide.bs.collapse", syncMenuState);
     collapse.addEventListener("hidden.bs.collapse", syncMenuState);
 
-    // Close the mobile menu after selecting a navigation item.
-    collapse.querySelectorAll(".nav-link").forEach((link) => {
+    // Close the mobile menu only after selecting a real navigation link.
+    // Dropdown toggles (including Administrator) must stay open so Bootstrap
+    // can display their submenu instead of collapsing the whole navbar.
+    collapse.querySelectorAll(".nav-link:not(.dropdown-toggle)").forEach((link) => {
       link.addEventListener("click", () => {
         if (window.innerWidth <= 991 && collapse.classList.contains("show")) {
           bootstrap.Collapse.getOrCreateInstance(collapse).hide();
         }
+      });
+    });
+
+    // Keep clicks on the Administrator dropdown inside the mobile navbar.
+    collapse.querySelectorAll(".dropdown-toggle").forEach((toggle) => {
+      toggle.addEventListener("click", (event) => {
+        event.stopPropagation();
       });
     });
 
