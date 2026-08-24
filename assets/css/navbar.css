@@ -7,7 +7,6 @@
 .custom-navbar.scrolled{background:rgba(255,255,255,.94);box-shadow:0 18px 45px rgba(16,24,40,.15);transform:translateY(-2px);border-color:rgba(22,119,255,.12)}
 body.dark-mode .custom-navbar{background:rgba(15,23,42,.82);border-color:rgba(148,163,184,.16);box-shadow:0 12px 38px rgba(0,0,0,.2)}body.dark-mode .custom-navbar.scrolled{background:rgba(15,23,42,.96);border-color:rgba(96,165,250,.16);box-shadow:0 18px 48px rgba(0,0,0,.38)}
 .navbar-brand{display:flex;align-items:center;gap:9px;font-weight:900;letter-spacing:-.02em;color:var(--dark)!important;transition:transform .25s ease}.navbar-brand:hover{transform:translateY(-1px)}
-/* Logo tampil persis seperti file PNG asli: tanpa background, radius, border, shadow, atau padding tambahan. */
 .brand-logo{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;background:transparent!important;background-color:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;overflow:visible}
 .brand-logo img{display:block;width:40px;height:40px;object-fit:contain;background:transparent!important;background-color:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;overflow:visible}
 .brand-icon{width:40px;height:40px;display:inline-grid;place-items:center;border-radius:13px;background:linear-gradient(135deg,var(--primary),#7657ff);color:#fff;box-shadow:0 8px 22px rgba(22,119,255,.25);transition:transform .3s ease,box-shadow .3s ease}.navbar-brand:hover .brand-icon{transform:rotate(-6deg) scale(1.06);box-shadow:0 11px 27px rgba(22,119,255,.34)}
@@ -15,11 +14,11 @@ body.dark-mode .custom-navbar{background:rgba(15,23,42,.82);border-color:rgba(14
 .theme-btn{position:relative;display:grid;place-items:center;border:1px solid var(--border);background:var(--card);color:var(--dark);width:42px;height:42px;border-radius:13px;transition:transform .25s ease,background .25s ease,border-color .25s ease,box-shadow .25s ease}.theme-btn:hover{transform:translateY(-2px) rotate(5deg);background:rgba(22,119,255,.08);border-color:rgba(22,119,255,.25);box-shadow:0 8px 20px rgba(22,119,255,.12)}body.dark-mode .theme-btn{background:#172033;border-color:#334155;color:#e2e8f0}body.dark-mode .theme-btn:hover{background:#243554;border-color:#3b82f6}
 .navbar-toggler{width:42px;height:42px;border-radius:13px!important;color:var(--dark);background:rgba(22,119,255,.07);display:grid;place-items:center;transition:background .25s ease,transform .25s ease,box-shadow .25s ease}.navbar-toggler:hover{background:rgba(22,119,255,.13);transform:scale(1.04)}body.dark-mode .navbar-toggler{color:#e2e8f0;background:rgba(96,165,250,.1)}body.dark-mode .navbar-toggler:hover{background:rgba(96,165,250,.17)}
 
-/* MOBILE MENU ANIMATION */
+/* MOBILE MENU ANIMATION + INTERNAL SCROLL */
 @media(max-width:991px){
  .navbar-wrap{top:8px;padding:0 8px}.custom-navbar{border-radius:19px;padding:8px 10px!important}
- .navbar-collapse{margin-top:12px;padding:12px 4px 4px;border-top:1px solid var(--border);overflow:hidden}
- .navbar-collapse.collapsing{height:0!important;transition:height .4s cubic-bezier(.22,1,.36,1)}
+ .navbar-collapse{margin-top:12px;padding:12px 4px 4px;border-top:1px solid var(--border);overflow-y:auto;overflow-x:hidden;max-height:calc(100vh - 78px);overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+ .navbar-collapse.collapsing{height:auto!important;max-height:calc(100vh - 78px);overflow-y:auto;transition:height .4s cubic-bezier(.22,1,.36,1)}
  .navbar-collapse.show{animation:mobileMenuReveal .4s cubic-bezier(.22,1,.36,1) both}
  .navbar-nav{gap:4px}.navbar-nav .nav-item{opacity:0;transform:translateY(-8px);transition:opacity .28s ease,transform .35s cubic-bezier(.22,1,.36,1)}
  .navbar-collapse.show .nav-item{opacity:1;transform:translateY(0)}
@@ -29,4 +28,4 @@ body.dark-mode .custom-navbar{background:rgba(15,23,42,.82);border-color:rgba(14
  .custom-navbar.menu-open{box-shadow:0 22px 55px rgba(16,24,40,.16)}body.dark-mode .custom-navbar.menu-open{box-shadow:0 24px 60px rgba(0,0,0,.42)}
 }
 @keyframes mobileMenuReveal{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:575px){.navbar-wrap{top:6px;padding:0 6px}.custom-navbar{border-radius:17px}.brand-logo img{width:38px;height:38px}.navbar-brand{font-size:.95rem}}
+@media(max-width:575px){.navbar-wrap{top:6px;padding:0 6px}.custom-navbar{border-radius:17px}.brand-logo img{width:38px;height:38px}.navbar-brand{font-size:.95rem}.navbar-collapse{max-height:calc(100vh - 68px)}}
